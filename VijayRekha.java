@@ -20,9 +20,12 @@ public class VijayRekha {
 
   public static void proccesLine(String line) {
     if(line!=""){
-      String[] word = line.split(" ");
+      String[] word = line.split("\t");
       System.out.println(line);
       System.out.println(word.length);
+//      if(word[0] == "Compound"){
+//        System.out.println(line);
+//      }
     }
   }
 
