@@ -9,11 +9,20 @@ public class VijayRekha {
     try {
       Scanner scan = new Scanner(new File(filename));
       if (scan.hasNextLine()) {
-        String[] split= scan.delimiter().split(" ");
-        System.out.println(Arrays.stream(split).count());
+        String[] split = new String[10];
+//        System.out.println(Arrays.stream(split).count());
 
-        System.out.println(split);
-        System.out.println(scan.next());
+//        System.out.println(split);
+        for (int i=0; i<3;i++){
+          split[i]=scan.next();
+        }
+
+        for (int i=0; i<3;i++){
+
+          System.out.println(split[i]);
+          System.out.println("Hi");
+        }
+
 
       }
 
@@ -26,7 +35,7 @@ public class VijayRekha {
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
     String filepath =
-        "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\Vijayrekha\\src\\08012024_AA.txt";
+        "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
 
     Boolean result = readData(filepath);
 
