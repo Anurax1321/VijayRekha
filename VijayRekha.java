@@ -8,33 +8,22 @@ public class VijayRekha {
 
   public static Boolean readData(String filename) throws FileNotFoundException {
     try {
+      ArrayList<String> eachLine = new ArrayList<>();
       Scanner scan = new Scanner(new File(filename));
-      if (scan.hasNextLine()) {
-        ArrayList<String> eachLine = new ArrayList<>();
-        ArrayList<String> split = new ArrayList<>();
-//        while (scan.hasNext()) {
-//          split.add(scan.next());
-//        }
+      while (scan.hasNextLine()) {
         eachLine.add(Arrays.toString(scan.nextLine().split(" ")));
-
-//        eachLine.add(scan.nextLine());
-        split.add(eachLine.get(0));
-
-//        for(int i=0; i<eachLine.size();i++){
-//          System.out.println(eachLine.get(i));
-//        }
-        System.out.println(eachLine.size());
-
-        System.out.println(split);
-
-//        split.add();
       }
-
+      System.out.println(eachLine.size());
+      System.out.println(eachLine);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
-    } return true;
+    }
+    return true;
   }
 
+  public static void proccesLine(String line) {
+    System.out.println(line);
+  }
 
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
