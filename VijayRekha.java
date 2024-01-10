@@ -20,7 +20,9 @@ public class VijayRekha {
 
   public static void proccesLine(String line) {
     if(line!=""){
+      String[] word = line.split(" ");
       System.out.println(line);
+      System.out.println(word.length);
     }
   }
 
