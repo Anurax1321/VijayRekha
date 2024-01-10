@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,21 +10,11 @@ public class VijayRekha {
     try {
       Scanner scan = new Scanner(new File(filename));
       if (scan.hasNextLine()) {
-        String[] split = new String[10];
-//        System.out.println(Arrays.stream(split).count());
-
-//        System.out.println(split);
-        for (int i=0; i<3;i++){
-          split[i]=scan.next();
+        ArrayList<String> split = new ArrayList<>();
+        while (scan.hasNext()) {
+          split.add(scan.next());
         }
-
-        for (int i=0; i<3;i++){
-
-          System.out.println(split[i]);
-          System.out.println("Hi");
-        }
-
-
+        System.out.println(split);
       }
 
     } catch (FileNotFoundException e) {
@@ -34,8 +25,7 @@ public class VijayRekha {
 
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
-    String filepath =
-        "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
+    String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
 
     Boolean result = readData(filepath);
 
