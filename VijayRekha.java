@@ -74,30 +74,10 @@ public class VijayRekha {
       Scanner scan = new Scanner(new File(filename)); // taking in the data from the file
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
-      // calling the helper method
-      data = processedData(scan, data);
 
-
-
-      for (int i = 1; i <= limit; i++) {
-        String pattern = "^" + i + "\\D";
-        for (int j = 0; j < data.size(); j++) {
-          if (data.get(j).matches(pattern + ".*")) {
-            // Array to store each line of the data ArrayList after the split
-            String[] dataLine = data.get(j).split("\t");
-
-            if (!(patientNames.contains(dataLine[1]))) {
-              // adding the patients names to the arraylist
-              patientNames.add(dataLine[1]);
-            }
-            // adding the responses to the arraylist; one coumpound after the other for a
-            // particular patient
-            responses.add(dataLine[dataLine.length - 1]);
-          }
-        }
-      }
-
-
+      // calling the helper methods one after the another to initiliase the arraylist and extraxt
+      // the data that w2e are interested in
+      useData(processedData(scan, data));
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
@@ -157,6 +137,27 @@ public class VijayRekha {
     return data;
   }
 
+
+  public void useData(ArrayList<String> data){
+
+    for (int i = 1; i <= limit; i++) {
+      String pattern = "^" + i + "\\D";
+      for (int j = 0; j < data.size(); j++) {
+        if (data.get(j).matches(pattern + ".*")) {
+          // Array to store each line of the data ArrayList after the split
+          String[] dataLine = data.get(j).split("\t");
+
+          if (!(patientNames.contains(dataLine[1]))) {
+            // adding the patients names to the arraylist
+            patientNames.add(dataLine[1]);
+          }
+          // adding the responses to the arraylist; one coumpound after the other for a
+          // particular patient
+          responses.add(dataLine[dataLine.length - 1]);
+        }
+      }
+    }
+  }
 
   /**
    * This is a helper method to print the elements in the 2D Array in the form of an Excel
