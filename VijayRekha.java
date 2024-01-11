@@ -1,20 +1,36 @@
+//Import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class VijayRekha {
 
+  // global variables
   ArrayList<String> head = new ArrayList<>();
   ArrayList<String> data = new ArrayList<>();
   int limit;
   int headNumber;
 
+  /**
+   *
+   * @param limit
+   * @param headNumber
+   */
   public VijayRekha(int limit,int headNumber){
     this.limit=limit;
     this.headNumber=headNumber;
   }
 
+  /**
+   *
+   * @param filename
+   * @return
+   * @throws FileNotFoundException
+   */
   public String[][] readData(String filename) throws FileNotFoundException {
     try {
       Scanner scan = new Scanner(new File(filename));
@@ -78,6 +94,11 @@ public class VijayRekha {
     return empty;
   }
 
+  /**
+   *
+   * @param args
+   * @throws FileNotFoundException
+   */
   public static void main(String[] args) throws FileNotFoundException {
 
     int limit = 18;
@@ -93,7 +114,6 @@ public class VijayRekha {
     System.out.println(results2);
     String[][] results3 = result.readData(filepath3);
     System.out.println(results3);
-
-
+    
   }
 }
