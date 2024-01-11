@@ -39,9 +39,9 @@ public class VijayRekha {
           }
         }
       }
-      System.out.println(head);
-      System.out.println(patientNames);
-      System.out.println(responses);
+//      System.out.println(head);
+//      System.out.println(patientNames);
+//      System.out.println(responses);
 
       String[][] combine = new String[limit + 1][head.size()];
 
@@ -67,16 +67,14 @@ public class VijayRekha {
         System.out.println(); // New line after each row
       }
 
-      //      System.out.println(combine);
-
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
     }
     return true;
   }
 
-  public static void proccesLine(String line, int limit) {
-  }
+//  public static void proccesLine(String line, int limit) {
+//  }
 
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
