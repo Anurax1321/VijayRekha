@@ -77,10 +77,8 @@ public class VijayRekha {
   //  }
 
   public static void main(String[] args) throws FileNotFoundException {
-    System.out.println("Hello world!");
     String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
-    int limit = 22;
-    Boolean result = readData(filepath, limit);
-    System.out.println(result);
+    int limit = 18;
+    readData(filepath, limit+4);
   }
 }
