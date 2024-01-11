@@ -8,7 +8,7 @@ public class VijayRekha {
   static ArrayList<String> head = new ArrayList<>();
   static ArrayList<String> data = new ArrayList<>();
 
-  public static Boolean readData(String filename, int limit) throws FileNotFoundException {
+  public Boolean readData(String filename, int limit) throws FileNotFoundException {
     try {
       Scanner scan = new Scanner(new File(filename));
       head.add("Name");
@@ -76,6 +76,7 @@ public class VijayRekha {
   public static void main(String[] args) throws FileNotFoundException {
     String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
     int limit = 18;
-    readData(filepath, limit + 4);
+    VijayRekha result = new VijayRekha();
+    result.readData(filepath, limit + 4);
   }
 }
