@@ -76,16 +76,12 @@ public class VijayRekha {
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
 
-      // calling the helper methods to initialize the arraylists and extract the data that we are
-      // interested in; so refine and extract the data from the dataset
+      // calling the helper methods
       processData(scan, data);
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
       //      System.out.println(responses);
-      //
-      //      System.out.println(head.size());
-
 
       for (int i = 0; i < headNumber; i++) {
         combine[0][i] = head.get(i);
