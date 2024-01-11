@@ -27,14 +27,7 @@ public class VijayRekha {
 
   //
   int headNumber;
-
-
-  /**
-   * This is a constructor which takes in two parameters
-   *
-   * @param limit
-   * @param headNumber
-   */
+  
   /**
    * This is a constructor which takes in two parameters
    *
