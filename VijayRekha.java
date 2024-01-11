@@ -83,18 +83,9 @@ public class VijayRekha {
       //      System.out.println(patientNames);
       //      System.out.println(responses);
 
-      for (int i = 0; i < headNumber; i++) {
-        combine[0][i] = head.get(i);
-      }
-
-      for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
-        combine[i][0] = patientNames.get(i - 1);
-        for (int j = 1; j < head.size(); j++, k++) {
-          combine[i][j] = responses.get(k);
-        }
-      }
-
-
+      // extraction of the data completed
+      // now we combine these ArrayLists into one 2D Array
+      setCombine();
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
@@ -177,6 +168,22 @@ public class VijayRekha {
           // to another until the last patient is reached in the refined data in chronological order
           responses.add(dataLine[dataLine.length - 1]);
         }
+      }
+    }
+  }
+
+  /**
+   * This is a helper method to combine the Arraylists to one 2D array
+   */
+  public void setCombine(){
+    for (int i = 0; i < headNumber; i++) {
+      combine[0][i] = head.get(i);
+    }
+
+    for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
+      combine[i][0] = patientNames.get(i - 1);
+      for (int j = 1; j < head.size(); j++, k++) {
+        combine[i][j] = responses.get(k);
       }
     }
   }
