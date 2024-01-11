@@ -79,11 +79,14 @@ public class VijayRekha {
   }
 
   public static void main(String[] args) throws FileNotFoundException {
-    String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
-    String filepath2 = "";
-    String filepath3 = "";
+
     int limit = 18;
+    String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
+    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
+    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
+
     VijayRekha result = new VijayRekha( limit + 4,0);
+
     String[][] results1 = result.readData(filepath1);
     System.out.println(results1);
     String[][] results2 = result.readData(filepath2);
