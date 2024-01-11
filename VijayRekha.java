@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class VijayRekha {
 
-  static ArrayList<String> head = new ArrayList<>();
-  static ArrayList<String> data = new ArrayList<>();
+  ArrayList<String> head = new ArrayList<>();
+  ArrayList<String> data = new ArrayList<>();
 
   public Boolean readData(String filename, int limit) throws FileNotFoundException {
     try {
