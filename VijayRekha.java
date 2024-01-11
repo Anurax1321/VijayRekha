@@ -74,7 +74,8 @@ public class VijayRekha {
       Scanner scan = new Scanner(new File(filename)); // taking in the data from the file
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
-      data = getDataAndSetHeader(scan, data);
+      // calling the helper method
+      data = processedData(scan, data);
 
 
 
@@ -120,29 +121,46 @@ public class VijayRekha {
     return combine;
   }
 
-  public ArrayList<String> getDataAndSetHeader(Scanner scan, ArrayList<String> data) {
+  /**
+   * This is a helper method that takes in the scanner object and an ArrayList to trim the data and
+   * return it and set the heading of the data set ino the head ArrayList
+   *
+   * @param scan scanner object that read the data file using the dat path
+   * @param data An empty arraylist to store the usable data from the read dataset after data
+   *             trimming
+   * @return the Arraylist filled with usable data from the dataset
+   */
+  public ArrayList<String> processedData(Scanner scan, ArrayList<String> data) {
 
+    //add "Name" column to the header; this comes before all compounds processed
     head.add("Name");
+    // looping through all the lines of the data set
     while (scan.hasNextLine()) {
+      // getting each line of the data set
       String line = scan.nextLine();
       if (line != "") {
+        // skipping the lines with nothing in it
+        // An Array to store each word of the current line separated by tab
         String[] word = line.split("\t");
         if (line.startsWith("Compound")) {
-          head.add(line);
+          // adding all lines that starts with 'compound' into head array
+          head.add(line); // getting all the compound in the dataset
         }
         if (word.length > 1 && line.matches("^\\d.*")) {
+          // only including the lines that have their length greater than one and start with a
+          // number; gets added into the dat array that is returned back and used elsewhere.
           data.add(line);
         }
       }
     }
-    return null;
+    // returning the processed data in an arraylist
+    return data;
   }
 
 
   /**
    * This is a helper method to print the elements in the 2D Array in the form of an Excel
-   * representation
-   *
+   * representation.
    * This method uses nested for loop and helps us to select each element at a time in the 2d array
    * starting from the left corner of the array
    *
