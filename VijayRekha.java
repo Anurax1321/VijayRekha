@@ -31,9 +31,9 @@ public class VijayRekha {
   /**
    * This is a constructor which takes in two parameters
    *
-   * @param limit this is the number of patient given by the user
-   * @param headType this is the type of the data set that is being passed; used to set the no.
-   *                 of header elements
+   * @param limit    this is the number of patient given by the user
+   * @param headType this is the type of the data set that is being passed; used to set the no. of
+   *                 header elements
    */
   public VijayRekha(int limit, int headType) {
     this.limit = limit;
