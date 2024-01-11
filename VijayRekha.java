@@ -97,13 +97,14 @@ public class VijayRekha {
           combine[i][j] = responses.get(k);
         }
       }
+      return combine;
       //      System.out.println(head);
       //      System.out.println(patientNames);
       //      System.out.println(responses);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
-    String[][] empty = new String[0][0];
+    String[][] empty;
     return empty;
   }
 
