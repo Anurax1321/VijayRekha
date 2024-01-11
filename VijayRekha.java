@@ -31,7 +31,7 @@ public class VijayRekha {
 
   // Variable to store the number of header elements based on the data set
   int headNumber;
-  
+
   /**
    * This is a constructor which takes in two parameters and assignees (HardCoding) it ot the global
    * variable that is used further in the code. there is an if-else which decide how many number of
@@ -70,23 +70,14 @@ public class VijayRekha {
    */
   public String[][] readData(String filename) throws FileNotFoundException {
     try {
-      Scanner scan = new Scanner(new File(filename));
-
-      head.add("Name");
+      // Scanner object to read the dataset
+      Scanner scan = new Scanner(new File(filename)); // taking in the data from the file
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
-      while (scan.hasNextLine()) {
-        String line = scan.nextLine();
-        if (line != "") {
-          String[] word = line.split("\t");
-          if (line.startsWith("Compound")) {
-            head.add(line);
-          }
-          if (word.length > 1 && line.matches("^\\d.*")) {
-            data.add(line);
-          }
-        }
-      }
+      data=getDataAndSetHeader(scan,data);
+
+
+
 
       for (int i = 1; i <= limit; i++) {
         String pattern = "^" + i + "\\D";
@@ -105,6 +96,8 @@ public class VijayRekha {
           }
         }
       }
+
+
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
@@ -127,6 +120,25 @@ public class VijayRekha {
     // returning the 2D array
     return combine;
   }
+
+  public ArrayList<String> getDataAndSetHeader(Scanner scan, ArrayList<String> data){
+
+    head.add("Name");
+    while (scan.hasNextLine()) {
+      String line = scan.nextLine();
+      if (line != "") {
+        String[] word = line.split("\t");
+        if (line.startsWith("Compound")) {
+          head.add(line);
+        }
+        if (word.length > 1 && line.matches("^\\d.*")) {
+          data.add(line);
+        }
+      }
+    }
+    return null;
+  }
+
 
   /**
    * This is a helper method to print the elements in the 2D Array in the form of an Excel
