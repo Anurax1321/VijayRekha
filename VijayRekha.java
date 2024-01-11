@@ -57,9 +57,9 @@ public class VijayRekha {
   /**
    * This is a method to read the data
    *
-   * @param filename
-   * @return
-   * @throws FileNotFoundException
+   * @param filename filepath of the dataset that we want to extract data from
+   * @return the 2D array that we get after the extraction of data; Excel data representation
+   * @throws FileNotFoundException when the data path is not resulting in any usable data file
    */
   public String[][] readData(String filename) throws FileNotFoundException {
     try {
