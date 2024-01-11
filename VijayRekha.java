@@ -54,7 +54,7 @@ public class VijayRekha {
     }
 
     // created the 2D array to store the Excel representation
-    combine=new String[limit+1][headNumber];
+    combine = new String[limit + 1][headNumber];
   }
 
   /**
@@ -102,12 +102,12 @@ public class VijayRekha {
         }
       }
 
-//      System.out.println(head);
-//      System.out.println(patientNames);
-//      System.out.println(responses);
-//
-//      System.out.println(head.size());
-      for (int i = 0; i <headNumber; i++) {
+      //      System.out.println(head);
+      //      System.out.println(patientNames);
+      //      System.out.println(responses);
+      //
+      //      System.out.println(head.size());
+      for (int i = 0; i < headNumber; i++) {
         combine[0][i] = head.get(i);
       }
 
