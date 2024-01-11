@@ -62,7 +62,8 @@ public class VijayRekha {
   }
 
   /**
-   * This is a method to read the data
+   * This is a method to read the data that uses a helper method to process, extract and
+   * initialize the data into arraylists.
    *
    * @param filename filepath of the dataset that we want to extract data from
    * @return the 2D array that we get after the extraction of data; Excel data representation
