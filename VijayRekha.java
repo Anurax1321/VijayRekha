@@ -26,8 +26,11 @@ public class VijayRekha {
       if (line.startsWith("Compound")) {
         head.add(line);
       }
-      System.out.println(line);
-      System.out.println(word.length);
+      if (word.length > 1 ) {
+
+        System.out.println(line);
+        System.out.println(word.length);
+      }
     }
   }
 
