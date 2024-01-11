@@ -49,11 +49,8 @@ public class VijayRekha {
         combine[0][i] = head.get(i);
       }
 
-      for (int i = 1; i <= limit; i++) {
-        combine[i][0] = patientNames.get(i - 1);
-      }
-
       for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
+        combine[i][0] = patientNames.get(i - 1);
         for (int j = 1; j < head.size(); j++, k++) {
           combine[i][j] = responses.get(k);
         }
