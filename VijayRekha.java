@@ -72,18 +72,25 @@ public class VijayRekha {
       //      System.out.println(patientNames);
       //      System.out.println(responses);
     } catch (FileNotFoundException e) {
-      throw new FileNotFoundException();
+      throw new FileNotFoundException("Invalid file path! try again");
     }
-    return ;
+    String[][] empty = new String[0][0];
+    return empty;
   }
 
-  //  public static void proccesLine(String line, int limit) {
-  //  }
-
   public static void main(String[] args) throws FileNotFoundException {
-    String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
+    String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
+    String filepath2 = "";
+    String filepath3 = "";
     int limit = 18;
     VijayRekha result = new VijayRekha( limit + 4,0);
-    String[][] results1 = result.readData(filepath);
+    String[][] results1 = result.readData(filepath1);
+    System.out.println(results1);
+    String[][] results2 = result.readData(filepath2);
+    System.out.println(results2);
+    String[][] results3 = result.readData(filepath3);
+    System.out.println(results3);
+
+
   }
 }
