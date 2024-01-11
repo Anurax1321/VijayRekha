@@ -5,23 +5,52 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
+ * This is a class with a mina method and rest non-static methods to read an interprit the data
+ * to get a usable result.
  *
+ * result is also expected to be printed to an Excel file
  */
 public class VijayRekha {
 
   // global variables
+
+  //
   ArrayList<String> head = new ArrayList<>();
+
+  //
   ArrayList<String> data = new ArrayList<>();
+
+  //
+
+  //
   int limit;
+
+  //
   int headNumber;
 
+
   /**
+   * This is a constructor which takes in two parameters
+   *
    * @param limit
    * @param headNumber
    */
-  public VijayRekha(int limit, int headNumber) {
+  /**
+   * This is a constructor which takes in two parameters
+   *
+   * @param limit
+   * @param headType
+   */
+  public VijayRekha(int limit, int headType ) {
     this.limit = limit;
-    this.headNumber = headNumber;
+    if (headType==1){
+      this.headNumber = 29;
+    } else if (headType==2) {
+      this.headNumber = 27;
+    } else if (headType==3) {
+      this.headNumber= 35;
+    }
+
   }
 
   /**
