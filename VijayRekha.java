@@ -30,9 +30,9 @@ public class VijayRekha {
   int headNumber;
 
   /**
-   * This is a constructor which takes in two parameters and assignees (HardCoding) it ot the
-   * global variable that is used further in the code. there is an if-else which decide how many
-   * number of compounds that are in the header for the data set chosen.
+   * This is a constructor which takes in two parameters and assignees (HardCoding) it ot the global
+   * variable that is used further in the code. there is an if-else which decide how many number of
+   * compounds that are in the header for the data set chosen.
    *
    * @param limit    this is the number of patient given by the user
    * @param headType this is the type of the data set that is being passed; used to set the no. of
@@ -122,7 +122,8 @@ public class VijayRekha {
   }
 
   /**
-   * This is a helper method to print the elements in the 2D Array
+   * This is a helper method to print the elements in the 2D Array in the form of an Excel
+   * representation
    *
    * This method uses nested for loop and helps us to select each element at a time in the 2d array
    * starting from the left corner of the array
