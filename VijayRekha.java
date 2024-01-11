@@ -13,7 +13,16 @@ public class VijayRekha {
       head.add("Name");
 
       while (scan.hasNextLine()) {
-        proccesLine(scan.nextLine(), limit);
+        String line = scan.nextLine();
+        if (line != "") {
+          String[] word = line.split("\t");
+          if (line.startsWith("Compound")) {
+            head.add(line);
+          }
+          if (word.length > 1 && line.matches("^\\d.*")) {
+            data.add(line);
+          }
+        }
       }
       System.out.println(data);
       System.out.println(head);
@@ -23,17 +32,9 @@ public class VijayRekha {
     return true;
   }
 
-  public static void proccesLine(String line, int limit) {
-    if (line != "") {
-      String[] word = line.split("\t");
-      if (line.startsWith("Compound")) {
-        head.add(line);
-      }
-      if (word.length > 1 && line.matches("^\\d.*")) {
-        data.add(line);
-      }
-    }
-  }
+//  public static void proccesLine(String line, int limit) {
+//
+//  }
 
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
