@@ -14,7 +14,7 @@ public class VijayRekha {
 
   // global variables
 
-  //
+  // ArrayList to store the Header Values
   ArrayList<String> head = new ArrayList<>();
 
   //
@@ -22,17 +22,18 @@ public class VijayRekha {
 
   //
 
-  //
+  // variable to store the number of patient given by the user
   int limit;
 
-  //
+  // Variable to store the number of header elements based on the data set
   int headNumber;
-  
+
   /**
    * This is a constructor which takes in two parameters
    *
-   * @param limit
-   * @param headType
+   * @param limit this is the number of patient given by the user
+   * @param headType this is the type of the data set that is being passed; used to set the no.
+   *                 of header elements
    */
   public VijayRekha(int limit, int headType) {
     this.limit = limit;
