@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VijayRekha {
+
   static ArrayList<String> head = new ArrayList<>();
   static ArrayList<String> data = new ArrayList<>();
 
@@ -39,9 +40,6 @@ public class VijayRekha {
           }
         }
       }
-      //      System.out.println(head);
-      //      System.out.println(patientNames);
-      //      System.out.println(responses);
 
       String[][] combine = new String[limit + 1][head.size()];
 
@@ -63,7 +61,9 @@ public class VijayRekha {
         }
         System.out.println(); // New line after each row
       }
-
+      //      System.out.println(head);
+      //      System.out.println(patientNames);
+      //      System.out.println(responses);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
     }
@@ -76,6 +76,6 @@ public class VijayRekha {
   public static void main(String[] args) throws FileNotFoundException {
     String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
     int limit = 18;
-    readData(filepath, limit+4);
+    readData(filepath, limit + 4);
   }
 }
