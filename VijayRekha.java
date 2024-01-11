@@ -109,8 +109,12 @@ public class VijayRekha {
   }
 
   /**
+   * This is the main method where the inputs are taken from the user and passed to the non-static
+   * method in the class using an object of the class itself.
+   *
    * @param args
-   * @throws FileNotFoundException
+   * @throws FileNotFoundException if the file path doesn't result in any usable file; in
+   * readData method
    */
   public static void main(String[] args) throws FileNotFoundException {
 
