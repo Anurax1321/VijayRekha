@@ -27,9 +27,9 @@ public class VijayRekha {
         head.add(line);
       }
       if (word.length > 1 && line.matches("^\\d.*")) {
-        
+
         System.out.println(line);
-        System.out.println(word.length);
+//        System.out.println(word.length);
       }
     }
   }
