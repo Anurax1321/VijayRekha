@@ -53,7 +53,7 @@ public class VijayRekha {
   }
 
   // 2D array to store the Excl represented values
-  //  String[][] ;
+  String[][] combine = new String[this.limit + 1][headNumber];
 
   /**
    * This is a method to read the data
@@ -99,8 +99,8 @@ public class VijayRekha {
         }
       }
 
-      System.out.println(head.size());
-      String[][] combine = new String[limit + 1][head.size()];
+      //      System.out.println(head.size());
+
 
       for (int i = 0; i < head.size(); i++) {
         combine[0][i] = head.get(i);
@@ -119,7 +119,7 @@ public class VijayRekha {
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
-    return ;
+    return combine;
   }
 
   /**
