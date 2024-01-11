@@ -16,17 +16,15 @@ public class VijayRekha {
   int headNumber;
 
   /**
-   *
    * @param limit
    * @param headNumber
    */
-  public VijayRekha(int limit,int headNumber){
-    this.limit=limit;
-    this.headNumber=headNumber;
+  public VijayRekha(int limit, int headNumber) {
+    this.limit = limit;
+    this.headNumber = headNumber;
   }
 
   /**
-   *
    * @param filename
    * @return
    * @throws FileNotFoundException
@@ -86,7 +84,7 @@ public class VijayRekha {
     return empty;
   }
 
-  public void print2DArray (String[][] array){
+  public void print2DArray(String[][] array) {
     for (int i = 0; i < array.length; i++) {
       // Loop through all columns of current row
       for (int j = 0; j < array[i].length; j++) {
@@ -97,7 +95,6 @@ public class VijayRekha {
   }
 
   /**
-   *
    * @param args
    * @throws FileNotFoundException
    */
@@ -105,17 +102,17 @@ public class VijayRekha {
 
     int limit = 18;
     String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
-//    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
-//    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
+    //    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
+    //    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
 
-    VijayRekha result = new VijayRekha( limit + 4,0);
+    VijayRekha result = new VijayRekha(limit + 4, 0);
 
     String[][] results1 = result.readData(filepath1);
     result.print2DArray(results1);
-//    String[][] results2 = result.readData(filepath2);
-//    System.out.println(results2);
-//    String[][] results3 = result.readData(filepath3);
-//    System.out.println(results3);
+    //    String[][] results2 = result.readData(filepath2);
+    //    System.out.println(results2);
+    //    String[][] results3 = result.readData(filepath3);
+    //    System.out.println(results3);
 
   }
 }
