@@ -176,13 +176,19 @@ public class VijayRekha {
    * This is a helper method to combine the Arraylists to one 2D array
    */
   public void setCombine(){
+
+    //This loop is to set the header elements into the 2D Array at the top
     for (int i = 0; i < headNumber; i++) {
       combine[0][i] = head.get(i);
     }
 
+    //The first loop is to go through each row at a time
     for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
+      // adding patient names at the beginning before adding in the values
       combine[i][0] = patientNames.get(i - 1);
+      // the second loop goes through each column per row
       for (int j = 1; j < head.size(); j++, k++) {
+        // setting in all the values for one patient and going to the next one
         combine[i][j] = responses.get(k);
       }
     }
