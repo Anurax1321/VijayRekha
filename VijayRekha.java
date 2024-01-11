@@ -76,14 +76,6 @@ public class VijayRekha {
           combine[i][j] = responses.get(k);
         }
       }
-
-      for (int i = 0; i < combine.length; i++) {
-        // Loop through all columns of current row
-        for (int j = 0; j < combine[i].length; j++) {
-          System.out.print(combine[i][j] + " , ");
-        }
-        System.out.println(); // New line after each row
-      }
       //      System.out.println(head);
       //      System.out.println(patientNames);
       //      System.out.println(responses);
@@ -92,6 +84,16 @@ public class VijayRekha {
     }
     String[][] empty = new String[0][0];
     return empty;
+  }
+
+  public void print2DArray (String[][] array){
+    for (int i = 0; i < array.length; i++) {
+      // Loop through all columns of current row
+      for (int j = 0; j < array[i].length; j++) {
+        System.out.print(array[i][j] + " , ");
+      }
+      System.out.println(); // New line after each row
+    }
   }
 
   /**
@@ -103,17 +105,17 @@ public class VijayRekha {
 
     int limit = 18;
     String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
-    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
-    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
+//    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
+//    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
 
     VijayRekha result = new VijayRekha( limit + 4,0);
 
     String[][] results1 = result.readData(filepath1);
-    System.out.println(results1);
-    String[][] results2 = result.readData(filepath2);
-    System.out.println(results2);
-    String[][] results3 = result.readData(filepath3);
-    System.out.println(results3);
-    
+    result.print2DArray(results1);
+//    String[][] results2 = result.readData(filepath2);
+//    System.out.println(results2);
+//    String[][] results3 = result.readData(filepath3);
+//    System.out.println(results3);
+
   }
 }
