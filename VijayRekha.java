@@ -41,7 +41,17 @@ public class VijayRekha {
    * @param headType this is the type of the data set that is being passed; used to set the no. of
    *                 header elements
    */
-  public VijayRekha(int limit, int headType) {
+
+  /**
+   * This is a constructor which takes in two parameters and assignees (HardCoding) it ot the global
+   * variable that is used further in the code. there is an if-else which decide how many number of
+   * compounds that are in the header for the data set chosen.
+   *
+   * @param limit    this is the number of patient given by the user
+   * @param headType this is the type of the data set that is being passed; used to set the no. of
+   *                 header elements
+   */
+  public VijayRekha(int limit, int headType) throws IllegalArgumentException {
     // number of patients
     this.limit = limit;
     // assigning (HardCoding) the headNumber based on headType
@@ -51,6 +61,8 @@ public class VijayRekha {
       this.headNumber = 27; // no. of compounds in the data set
     } else if (headType == 3) { // ACEXT
       this.headNumber = 35; // no. of compounds in the data set
+    } else {
+      throw new IllegalArgumentException("invalid input!! try again");
     }
 
     // created the 2D array to store the Excel representation
