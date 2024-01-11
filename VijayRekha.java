@@ -7,8 +7,15 @@ public class VijayRekha {
 
   ArrayList<String> head = new ArrayList<>();
   ArrayList<String> data = new ArrayList<>();
+  int limit;
+  int headNumber;
 
-  public Boolean readData(String filename, int limit) throws FileNotFoundException {
+  public VijayRekha(int limit,int headNumber){
+    this.limit=limit;
+    this.headNumber=headNumber;
+  }
+
+  public String[][] readData(String filename) throws FileNotFoundException {
     try {
       Scanner scan = new Scanner(new File(filename));
       head.add("Name");
@@ -67,7 +74,7 @@ public class VijayRekha {
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
     }
-    return true;
+    return ;
   }
 
   //  public static void proccesLine(String line, int limit) {
@@ -76,7 +83,7 @@ public class VijayRekha {
   public static void main(String[] args) throws FileNotFoundException {
     String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
     int limit = 18;
-    VijayRekha result = new VijayRekha();
-    result.readData(filepath, limit + 4);
+    VijayRekha result = new VijayRekha( limit + 4,0);
+    String[][] results1 = result.readData(filepath);
   }
 }
