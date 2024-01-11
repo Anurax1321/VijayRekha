@@ -75,15 +75,17 @@ public class VijayRekha {
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
 
-      // calling the helper methods one after the another to initiliase the arraylist and extraxt
-      // the data that w2e are interested in
-      useData(processedData(scan, data));
+      // calling the helper methods to initialize the arraylists and extract the data that we are
+      // interested in; so refine and extract the data from the dataset
+      processData(scan, data);
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
       //      System.out.println(responses);
       //
       //      System.out.println(head.size());
+
+
       for (int i = 0; i < headNumber; i++) {
         combine[0][i] = head.get(i);
       }
@@ -94,6 +96,8 @@ public class VijayRekha {
           combine[i][j] = responses.get(k);
         }
       }
+
+
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
@@ -103,14 +107,16 @@ public class VijayRekha {
 
   /**
    * This is a helper method that takes in the scanner object and an ArrayList to trim the data and
-   * return it and set the heading of the data set ino the head ArrayList
+   * return it and set the heading of the data set ino the head ArrayList.
+   * After achieving the data it calls another helper method to extract information from the
+   * refined data extracted in this method.
    *
    * @param scan scanner object that read the data file using the dat path
    * @param data An empty arraylist to store the usable data from the read dataset after data
    *             trimming
    * @return the Arraylist filled with usable data from the dataset
    */
-  public ArrayList<String> processedData(Scanner scan, ArrayList<String> data) {
+  public void processData(Scanner scan, ArrayList<String> data) {
 
     //add "Name" column to the header; this comes before all compounds processed
     head.add("Name");
@@ -133,17 +139,31 @@ public class VijayRekha {
         }
       }
     }
-    // returning the processed data in an arraylist
-    return data;
+    // calling another helper method to finish the complete the extraction of data
+    useData(data);
   }
 
 
+  /**
+   * This is a helper method to a helper method where we take in refined data and extract the
+   * information that we want from it. we initialize the arraylist from the refined data array.
+   * We are using a nested loop to go through each the lines (Rows) and values (Columns) in the
+   * refined data.
+   * 'i' is also the number of patients in the data; getting all the values for one patient at a
+   * time placed one after the other
+   *
+   * @param data refined data from the data set
+   */
   public void useData(ArrayList<String> data){
 
+    // the first loop where the rows are represented by 'i'
     for (int i = 1; i <= limit; i++) {
+      //
       String pattern = "^" + i + "\\D";
       for (int j = 0; j < data.size(); j++) {
         if (data.get(j).matches(pattern + ".*")) {
+          //
+
           // Array to store each line of the data ArrayList after the split
           String[] dataLine = data.get(j).split("\t");
 
