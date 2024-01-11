@@ -39,23 +39,23 @@ public class VijayRekha {
           }
         }
       }
-//      System.out.println(head);
-//      System.out.println(patientNames);
-//      System.out.println(responses);
+      //      System.out.println(head);
+      //      System.out.println(patientNames);
+      //      System.out.println(responses);
 
       String[][] combine = new String[limit + 1][head.size()];
 
       for (int i = 0; i < head.size(); i++) {
         combine[0][i] = head.get(i);
       }
+
       for (int i = 1; i <= limit; i++) {
         combine[i][0] = patientNames.get(i - 1);
       }
 
-
       for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
-        for (int j = 1; j < head.size(); j++,k++) {
-          combine[i][j]=responses.get(k);
+        for (int j = 1; j < head.size(); j++, k++) {
+          combine[i][j] = responses.get(k);
         }
       }
 
@@ -73,19 +73,14 @@ public class VijayRekha {
     return true;
   }
 
-//  public static void proccesLine(String line, int limit) {
-//  }
+  //  public static void proccesLine(String line, int limit) {
+  //  }
 
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
     String filepath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
-
     int limit = 22;
     Boolean result = readData(filepath, limit);
-
     System.out.println(result);
-
   }
-
-
 }
