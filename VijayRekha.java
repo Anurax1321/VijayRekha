@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * This is a class with a mina method and rest non-static methods to read an interprit the data
- * to get a usable result.
+ * This is a class with a mina method and rest non-static methods to read an interprit the data to
+ * get a usable result.
  *
  * result is also expected to be printed to an Excel file
  */
@@ -34,14 +34,14 @@ public class VijayRekha {
    * @param limit
    * @param headType
    */
-  public VijayRekha(int limit, int headType ) {
+  public VijayRekha(int limit, int headType) {
     this.limit = limit;
-    if (headType==1){
+    if (headType == 1) {
       this.headNumber = 29;
-    } else if (headType==2) {
+    } else if (headType == 2) {
       this.headNumber = 27;
-    } else if (headType==3) {
-      this.headNumber= 35;
+    } else if (headType == 3) {
+      this.headNumber = 35;
     }
 
   }
@@ -135,8 +135,8 @@ public class VijayRekha {
    * method in the class using an object of the class itself.
    *
    * @param args
-   * @throws FileNotFoundException if the file path doesn't result in any usable file; in
-   * readData method
+   * @throws FileNotFoundException if the file path doesn't result in any usable file; in readData
+   *                               method
    */
   public static void main(String[] args) throws FileNotFoundException {
 
