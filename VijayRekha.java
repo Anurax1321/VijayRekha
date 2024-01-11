@@ -23,6 +23,9 @@ public class VijayRekha {
   // ArrayList to store the responses for all the compounds per patient
   ArrayList<String> responses = new ArrayList<>();
 
+  // 2D array to store the Excl represented values
+  String[][] combine;
+
   // variable to store the number of patient given by the user
   int limit;
 
@@ -49,10 +52,10 @@ public class VijayRekha {
     } else if (headType == 3) { // ACEXT
       this.headNumber = 35; // no. of compounds in the data set
     }
-  }
 
-  // 2D array to store the Excl represented values
-  String[][] combine = new String[23][29];
+    // created the 2D array to store the Excel representation
+    combine=new String[limit+1][headNumber];
+  }
 
   /**
    * This is a method to read the data
