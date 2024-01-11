@@ -52,7 +52,7 @@ public class VijayRekha {
   }
 
   // 2D array to store the Excl represented values
-  String[][] combine = new String[this.limit + 1][headNumber];
+  String[][] combine = new String[23][29];
 
   /**
    * This is a method to read the data
@@ -64,6 +64,7 @@ public class VijayRekha {
   public String[][] readData(String filename) throws FileNotFoundException {
     try {
       Scanner scan = new Scanner(new File(filename));
+
       head.add("Name");
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
@@ -98,10 +99,12 @@ public class VijayRekha {
         }
       }
 
-      //      System.out.println(head.size());
-
-
-      for (int i = 0; i < head.size(); i++) {
+//      System.out.println(head);
+//      System.out.println(patientNames);
+//      System.out.println(responses);
+//
+//      System.out.println(head.size());
+      for (int i = 0; i <headNumber; i++) {
         combine[0][i] = head.get(i);
       }
 
@@ -111,9 +114,6 @@ public class VijayRekha {
           combine[i][j] = responses.get(k);
         }
       }
-      //      System.out.println(head);
-      //      System.out.println(patientNames);
-      //      System.out.println(responses);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
