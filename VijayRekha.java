@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class VijayRekha {
   static ArrayList<String> head = new ArrayList<>();
+  static ArrayList<String> data = new ArrayList<>();
 
   public static Boolean readData(String filename, int limit) throws FileNotFoundException {
     try {
@@ -14,6 +15,7 @@ public class VijayRekha {
       while (scan.hasNextLine()) {
         proccesLine(scan.nextLine(), limit);
       }
+      System.out.println(data);
       System.out.println(head);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
@@ -29,16 +31,17 @@ public class VijayRekha {
       }
       if (word.length > 1 && line.matches("^\\d.*")) {
 
-        System.out.println(line);
+//        System.out.println(line);
         //        System.out.println(word.length);
-        String[][] data = new String[limit][];
-//        data[0][] = head;
-        for (int i = 1; i <= limit; i++) {
-          if(line.startsWith((String) i)){
+        data.add(line);
 
-          }
-        data[i][]= word[1] ;
-        }
+        //        data[0][] = head;
+        //        for (int i = 1; i <= limit; i++) {
+        //          if(line.startsWith((String) i)){
+        //
+        //          }
+        //        data[i][]= word[1] ;
+        //        }
 
       }
     }
