@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class VijayRekha {
@@ -29,9 +28,6 @@ public class VijayRekha {
       }
       System.out.println(line);
       System.out.println(word.length);
-      //      if(word[0] == "Compound"){
-      //        System.out.println(line);
-      //      }
     }
   }
 
