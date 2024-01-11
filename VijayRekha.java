@@ -36,15 +36,16 @@ public class VijayRekha {
    *                 header elements
    */
   public VijayRekha(int limit, int headType) {
+    // number of patients
     this.limit = limit;
-    if (headType == 1) {
-      this.headNumber = 29;
-    } else if (headType == 2) {
-      this.headNumber = 27;
-    } else if (headType == 3) {
-      this.headNumber = 35;
+    // assigning the headNumber based on headType
+    if (headType == 1) { // AA
+      this.headNumber = 29; // no. of compounds in the data set
+    } else if (headType == 2) { // AC
+      this.headNumber = 27; // no. of compounds in the data set
+    } else if (headType == 3) { // ACEXT
+      this.headNumber = 35; // no. of compounds in the data set
     }
-
   }
 
   /**
