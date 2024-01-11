@@ -18,7 +18,7 @@ public class VijayRekha {
   ArrayList<String> head = new ArrayList<>();
 
   //
-  ArrayList<String> data = new ArrayList<>();
+
 
   // ArrayList to store the patient names
   ArrayList<String> patientNames = new ArrayList<>();
@@ -53,7 +53,7 @@ public class VijayRekha {
   }
 
   // 2D array to store the Excl represented values
-  String[][] ;
+  //  String[][] ;
 
   /**
    * This is a method to read the data
@@ -66,7 +66,8 @@ public class VijayRekha {
     try {
       Scanner scan = new Scanner(new File(filename));
       head.add("Name");
-
+      // ArrayList to store the whole data that I need the information from;
+      ArrayList<String> data = new ArrayList<>();
       while (scan.hasNextLine()) {
         String line = scan.nextLine();
         if (line != "") {
@@ -84,16 +85,21 @@ public class VijayRekha {
         String pattern = "^" + i + "\\D";
         for (int j = 0; j < data.size(); j++) {
           if (data.get(j).matches(pattern + ".*")) {
+            // Array to store each line of the data ArrayList after the split
             String[] dataLine = data.get(j).split("\t");
 
             if (!(patientNames.contains(dataLine[1]))) {
+              // adding the patients names to the arraylist
               patientNames.add(dataLine[1]);
             }
+            // adding the responses to the arraylist; one coumpound after the other for a
+            // particular patient
             responses.add(dataLine[dataLine.length - 1]);
           }
         }
       }
 
+      System.out.println(head.size());
       String[][] combine = new String[limit + 1][head.size()];
 
       for (int i = 0; i < head.size(); i++) {
@@ -106,15 +112,14 @@ public class VijayRekha {
           combine[i][j] = responses.get(k);
         }
       }
-      return combine;
+      //      return combine;
       //      System.out.println(head);
       //      System.out.println(patientNames);
       //      System.out.println(responses);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
-    String[][] empty;
-    return empty;
+    return ;
   }
 
   /**
