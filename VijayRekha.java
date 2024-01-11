@@ -112,13 +112,13 @@ public class VijayRekha {
           combine[i][j] = responses.get(k);
         }
       }
-      //      return combine;
       //      System.out.println(head);
       //      System.out.println(patientNames);
       //      System.out.println(responses);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
+    // returning the 2D array
     return combine;
   }
 
@@ -156,18 +156,30 @@ public class VijayRekha {
    */
   public static void main(String[] args) throws FileNotFoundException {
 
+    // number of patients given by the user
     int limit = 18;
+
+    // Data Paths for AA, AC, ACEXT; given by the user
     String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
     //    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
     //    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
 
+    // creating the object of the class with the parameters
     VijayRekha result = new VijayRekha(limit + 4, 1);
 
+    // the 2D Array for the AA dataset
     String[][] results1 = result.readData(filepath1);
+    // printing the 2D Array
     result.print2DArray(results1);
+
+    // the 2D Array for the AC dataset
     //    String[][] results2 = result.readData(filepath2);
+    // printing the 2D Array
     //    System.out.println(results2);
+
+    // the 2D Array for the ACEXT dataset
     //    String[][] results3 = result.readData(filepath3);
+    // printing the 2D Array
     //    System.out.println(results3);
 
   }
