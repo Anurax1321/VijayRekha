@@ -149,31 +149,37 @@ public class VijayRekha {
    * information that we want from it. we initialize the arraylist from the refined data array.
    * We are using a nested loop to go through each the lines (Rows) and values (Columns) in the
    * refined data.
-   * 'i' is also the number of patients in the data; getting all the values for one patient at a
-   * time placed one after the other
-   * 
+   * We want to match the pattern at the beginning of the line to a number to get all the
+   * results related to one patient at a place.
+   * 'i' is also the number of patients in the data; we start from 1 and go until the last
+   * patient and get all the results related to this patient at one place to extract the
+   * information that we want and put it in the arraylists
+   * 'j' represents the lines in the refined data; we go through each line of the refined data
+   * and match the number 'i' and get the line if it matches and extract information form that
+   * line and place it in the arraylist.
    *
    * @param data refined data from the data set
    */
   public void useData(ArrayList<String> data){
 
-    // the first loop where the rows are represented by 'i'
+    // the first loop is for the current patient number which is represented by 'i'
     for (int i = 1; i <= limit; i++) {
-      //
+      // pattern to match the number at the beginning with the patient number.
       String pattern = "^" + i + "\\D";
+      // The second loop goes through each line in the refined data using 'j' as index
       for (int j = 0; j < data.size(); j++) {
-        if (data.get(j).matches(pattern + ".*")) {
-          //
+        if (data.get(j).matches(pattern + ".*")) { // matching
 
-          // Array to store each line of the data ArrayList after the split
+          // Array to store each line of the data ArrayList after the split as words
           String[] dataLine = data.get(j).split("\t");
 
+          // checking for duplicates; only adding the unique names one after the other
           if (!(patientNames.contains(dataLine[1]))) {
             // adding the patients names to the arraylist
             patientNames.add(dataLine[1]);
           }
-          // adding the responses to the arraylist; one coumpound after the other for a
-          // particular patient
+          // adding the responses to the arraylist; one compound after the other per one patient
+          // to another until the last patient is reached in the refined data in chronological order
           responses.add(dataLine[dataLine.length - 1]);
         }
       }
