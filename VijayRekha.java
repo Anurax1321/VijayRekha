@@ -17,9 +17,6 @@ public class VijayRekha {
   // ArrayList to store the Header Values
   ArrayList<String> head = new ArrayList<>();
 
-  //
-
-
   // ArrayList to store the patient names
   ArrayList<String> patientNames = new ArrayList<>();
 
@@ -33,7 +30,9 @@ public class VijayRekha {
   int headNumber;
 
   /**
-   * This is a constructor which takes in two parameters
+   * This is a constructor which takes in two parameters and assignees (HardCoding) it ot the
+   * global variable that is used further in the code. there is an if-else which decide how many
+   * number of compounds that are in the header for the data set chosen.
    *
    * @param limit    this is the number of patient given by the user
    * @param headType this is the type of the data set that is being passed; used to set the no. of
