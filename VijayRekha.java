@@ -26,8 +26,8 @@ public class VijayRekha {
       if (line.startsWith("Compound")) {
         head.add(line);
       }
-      if (word.length > 1 ) {
-
+      if (word.length > 1 && line.matches("^\\d.*")) {
+        
         System.out.println(line);
         System.out.println(word.length);
       }
