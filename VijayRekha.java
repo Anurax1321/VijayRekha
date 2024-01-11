@@ -45,11 +45,18 @@ public class VijayRekha {
 
       String[][] combine = new String[limit + 1][head.size()];
 
-      for(int i=0; i<head.size();i++){
-        combine[0][i]=head.get(i);
+      for (int i = 0; i < head.size(); i++) {
+        combine[0][i] = head.get(i);
       }
-      for (int i=1; i<=limit;i++){
-        combine[i][0]=patientNames.get(i-1);
+      for (int i = 1; i <= limit; i++) {
+        combine[i][0] = patientNames.get(i - 1);
+      }
+
+
+      for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
+        for (int j = 1; j < head.size(); j++,k++) {
+          combine[i][j]=responses.get(k);
+        }
       }
 
       for (int i = 0; i < combine.length; i++) {
@@ -60,7 +67,7 @@ public class VijayRekha {
         System.out.println(); // New line after each row
       }
 
-//      System.out.println(combine);
+      //      System.out.println(combine);
 
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
