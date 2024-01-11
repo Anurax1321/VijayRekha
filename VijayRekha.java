@@ -47,6 +47,8 @@ public class VijayRekha {
    * variable that is used further in the code. there is an if-else which decide how many number of
    * compounds that are in the header for the data set chosen.
    *
+   * And to create the 2D array to store the Excel representation
+   *
    * @param limit    this is the number of patient given by the user
    * @param headType this is the type of the data set that is being passed; used to set the no. of
    *                 header elements
