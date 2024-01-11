@@ -5,13 +5,16 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class VijayRekha {
+  static ArrayList<String> head = new ArrayList<>();
 
   public static Boolean readData(String filename) throws FileNotFoundException {
     try {
       Scanner scan = new Scanner(new File(filename));
-      while(scan.hasNextLine()){
+      head.add("Name");
+      while (scan.hasNextLine()) {
         proccesLine(scan.nextLine());
       }
+      System.out.println(head);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
     }
@@ -19,13 +22,16 @@ public class VijayRekha {
   }
 
   public static void proccesLine(String line) {
-    if(line!=""){
+    if (line != "") {
       String[] word = line.split("\t");
+      if (line.startsWith("Compound")) {
+        head.add(line);
+      }
       System.out.println(line);
       System.out.println(word.length);
-//      if(word[0] == "Compound"){
-//        System.out.println(line);
-//      }
+      //      if(word[0] == "Compound"){
+      //        System.out.println(line);
+      //      }
     }
   }
 
