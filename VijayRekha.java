@@ -24,18 +24,27 @@ public class VijayRekha {
           }
         }
       }
+      ArrayList<String> patientNames = new ArrayList<>();
       for (int i = 1; i <= limit; i++) {
         String pattern = "^" + i + "\\D";
         for (int j = 0; j < data.size(); j++) {
           if (data.get(j).matches(pattern+ ".*")) {
 //            System.out.println(data.get(j));
             String[] dataLine= data.get(j).split("\t");
-            for(String item : dataLine){
-              System.out.println(item);
+
+            if (!(patientNames.contains(dataLine[1]))){
+              patientNames.add(dataLine[1]);
             }
+//            System.out.println(dataLine[1]);
+//            for(String item : dataLine){
+//              System.out.println(item);
+//            }
           }
         }
       }
+      System.out.println(patientNames);
+      System.out.println(patientNames.size());
+
       //      System.out.println(data);
       System.out.println(head);
     } catch (FileNotFoundException e) {
