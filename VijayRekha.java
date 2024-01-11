@@ -30,19 +30,7 @@ public class VijayRekha {
         head.add(line);
       }
       if (word.length > 1 && line.matches("^\\d.*")) {
-
-//        System.out.println(line);
-        //        System.out.println(word.length);
         data.add(line);
-
-        //        data[0][] = head;
-        //        for (int i = 1; i <= limit; i++) {
-        //          if(line.startsWith((String) i)){
-        //
-        //          }
-        //        data[i][]= word[1] ;
-        //        }
-
       }
     }
   }
