@@ -20,7 +20,11 @@ public class VijayRekha {
   //
   ArrayList<String> data = new ArrayList<>();
 
-  //
+  // ArrayList to store the patient names
+  ArrayList<String> patientNames = new ArrayList<>();
+
+  // ArrayList to store the responses for all the compounds per patient
+  ArrayList<String> responses = new ArrayList<>();
 
   // variable to store the number of patient given by the user
   int limit;
@@ -38,7 +42,7 @@ public class VijayRekha {
   public VijayRekha(int limit, int headType) {
     // number of patients
     this.limit = limit;
-    // assigning the headNumber based on headType
+    // assigning (HardCoding) the headNumber based on headType
     if (headType == 1) { // AA
       this.headNumber = 29; // no. of compounds in the data set
     } else if (headType == 2) { // AC
@@ -48,7 +52,12 @@ public class VijayRekha {
     }
   }
 
+  // 2D array to store the Excl represented values
+  String[][] ;
+
   /**
+   * This is a method to read the data
+   *
    * @param filename
    * @return
    * @throws FileNotFoundException
@@ -70,8 +79,7 @@ public class VijayRekha {
           }
         }
       }
-      ArrayList<String> patientNames = new ArrayList<>();
-      ArrayList<String> responses = new ArrayList<>();
+
       for (int i = 1; i <= limit; i++) {
         String pattern = "^" + i + "\\D";
         for (int j = 0; j < data.size(); j++) {
@@ -148,7 +156,7 @@ public class VijayRekha {
     //    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
     //    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
 
-    VijayRekha result = new VijayRekha(limit + 4, 0);
+    VijayRekha result = new VijayRekha(limit + 4, 1);
 
     String[][] results1 = result.readData(filepath1);
     result.print2DArray(results1);
