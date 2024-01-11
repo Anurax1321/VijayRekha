@@ -24,7 +24,16 @@ public class VijayRekha {
           }
         }
       }
-      System.out.println(data);
+      for (int i = 1; i <= limit; i++) {
+        String pattern = "^" + i + "\\D";
+        for (int j = 0; j < data.size(); j++) {
+          if (data.get(j).matches(pattern+ ".*")) {
+            System.out.println(data.get(j));
+//            String[] dataLine= data.get(j).split("\t");
+          }
+        }
+      }
+      //      System.out.println(data);
       System.out.println(head);
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
@@ -32,9 +41,8 @@ public class VijayRekha {
     return true;
   }
 
-//  public static void proccesLine(String line, int limit) {
-//
-//  }
+  public static void proccesLine(String line, int limit) {
+  }
 
   public static void main(String[] args) throws FileNotFoundException {
     System.out.println("Hello world!");
