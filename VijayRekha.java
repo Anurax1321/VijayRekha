@@ -43,8 +43,22 @@ public class VijayRekha {
       System.out.println(patientNames);
       System.out.println(responses);
 
-//      String[][] combine = new String[limit + 1][head.size()];
+      String[][] combine = new String[limit + 1][head.size()];
+
+      for(int i=0; i<head.size();i++){
+        combine[0][i]=head.get(i);
+      }
       
+      for (int i = 0; i < combine.length; i++) {
+        // Loop through all columns of current row
+        for (int j = 0; j < combine[i].length; j++) {
+          System.out.print(combine[i][j] + " , ");
+        }
+        System.out.println(); // New line after each row
+      }
+
+//      System.out.println(combine);
+
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException();
     }
