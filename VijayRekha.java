@@ -74,8 +74,7 @@ public class VijayRekha {
       Scanner scan = new Scanner(new File(filename)); // taking in the data from the file
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
-      data=getDataAndSetHeader(scan,data);
-
+      data = getDataAndSetHeader(scan, data);
 
 
 
@@ -121,7 +120,7 @@ public class VijayRekha {
     return combine;
   }
 
-  public ArrayList<String> getDataAndSetHeader(Scanner scan, ArrayList<String> data){
+  public ArrayList<String> getDataAndSetHeader(Scanner scan, ArrayList<String> data) {
 
     head.add("Name");
     while (scan.hasNextLine()) {
