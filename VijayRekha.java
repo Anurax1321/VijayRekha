@@ -48,7 +48,10 @@ public class VijayRekha {
       for(int i=0; i<head.size();i++){
         combine[0][i]=head.get(i);
       }
-      
+      for (int i=1; i<=limit;i++){
+        combine[i][0]=patientNames.get(i-1);
+      }
+
       for (int i = 0; i < combine.length; i++) {
         // Loop through all columns of current row
         for (int j = 0; j < combine[i].length; j++) {
