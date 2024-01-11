@@ -28,8 +28,11 @@ public class VijayRekha {
         String pattern = "^" + i + "\\D";
         for (int j = 0; j < data.size(); j++) {
           if (data.get(j).matches(pattern+ ".*")) {
-            System.out.println(data.get(j));
-//            String[] dataLine= data.get(j).split("\t");
+//            System.out.println(data.get(j));
+            String[] dataLine= data.get(j).split("\t");
+            for(String item : dataLine){
+              System.out.println(item);
+            }
           }
         }
       }
