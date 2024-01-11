@@ -84,13 +84,27 @@ public class VijayRekha {
     return empty;
   }
 
+  /**
+   * This is a helper method to print the elements in the 2D Array
+   *
+   * This method uses nested for loop and helps us to select each element at a time in the 2d array
+   * starting from the left corner of the array
+   *
+   * @param array the 2D array that we want to be printed
+   */
   public void print2DArray(String[][] array) {
+    // using a nested for loop
     for (int i = 0; i < array.length; i++) {
-      // Loop through all columns of current row
+      // the first for-loop goes through all columns of current row
+      // 'i' represents the current row
       for (int j = 0; j < array[i].length; j++) {
+        // the second for-loop goes through all rows of the current column
+        // 'j' represents the current column
         System.out.print(array[i][j] + " , ");
+        // printing each element ending with a comma for .excel representation
       }
-      System.out.println(); // New line after each row
+      System.out.println();
+      // Adding a new line after each row; for tabular print; excel representation
     }
   }
 
