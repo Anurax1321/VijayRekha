@@ -62,8 +62,8 @@ public class VijayRekha {
   }
 
   /**
-   * This is a method to read the data that uses a helper method to process, extract and
-   * initialize the data into arraylists.
+   * This is a method to read the data that uses a helper method to process, extract and initialize
+   * the data into arraylists.
    *
    * @param filename filepath of the dataset that we want to extract data from
    * @return the 2D array that we get after the extraction of data; Excel data representation
@@ -104,9 +104,9 @@ public class VijayRekha {
 
   /**
    * This is a helper method that takes in the scanner object and an ArrayList to trim the data and
-   * return it and set the heading of the data set ino the head ArrayList.
-   * After achieving the data it calls another helper method to extract information from the
-   * refined data extracted in this method.
+   * return it and set the heading of the data set ino the head ArrayList. After achieving the data
+   * it calls another helper method to extract information from the refined data extracted in this
+   * method.
    *
    * @param scan scanner object that read the data file using the dat path
    * @param data An empty arraylist to store the usable data from the read dataset after data
@@ -143,21 +143,19 @@ public class VijayRekha {
 
   /**
    * This is a helper method to a helper method where we take in refined data and extract the
-   * information that we want from it. we initialize the arraylist from the refined data array.
-   * We are using a nested loop to go through each the lines (Rows) and values (Columns) in the
-   * refined data.
-   * We want to match the pattern at the beginning of the line to a number to get all the
-   * results related to one patient at a place.
-   * 'i' is also the number of patients in the data; we start from 1 and go until the last
-   * patient and get all the results related to this patient at one place to extract the
-   * information that we want and put it in the arraylists
-   * 'j' represents the lines in the refined data; we go through each line of the refined data
-   * and match the number 'i' and get the line if it matches and extract information form that
-   * line and place it in the arraylist.
+   * information that we want from it. we initialize the arraylist from the refined data array. We
+   * are using a nested loop to go through each the lines (Rows) and values (Columns) in the refined
+   * data. We want to match the pattern at the beginning of the line to a number to get all the
+   * results related to one patient at a place. 'i' is also the number of patients in the data; we
+   * start from 1 and go until the last patient and get all the results related to this patient at
+   * one place to extract the information that we want and put it in the arraylists 'j' represents
+   * the lines in the refined data; we go through each line of the refined data and match the number
+   * 'i' and get the line if it matches and extract information form that line and place it in the
+   * arraylist.
    *
    * @param data refined data from the data set
    */
-  public void useData(ArrayList<String> data){
+  public void useData(ArrayList<String> data) {
 
     // the first loop is for the current patient number which is represented by 'i'
     for (int i = 1; i <= limit; i++) {
@@ -185,9 +183,8 @@ public class VijayRekha {
 
   /**
    * This is a helper method to print the elements in the 2D Array in the form of an Excel
-   * representation.
-   * This method uses nested for loop and helps us to select each element at a time in the 2d array
-   * starting from the left corner of the array
+   * representation. This method uses nested for loop and helps us to select each element at a time
+   * in the 2d array starting from the left corner of the array
    *
    * @param array the 2D array that we want to be printed
    */
