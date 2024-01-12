@@ -212,9 +212,11 @@ public class VijayRekha {
       for (int i = 1; i <= limit; i++) {
         // the second loop goes through each column per row
         for (int j = 1; j < head.size(); j++) {
-          // setting in all the values for one patient and going to the next one
+          // printing in all the values for one patient and going to the next one
           System.out.println(combine[i][j]);
         }
+        System.out.println();
+        // Adding a new line after each row; for tabular print; excel representation
       }
 
 
