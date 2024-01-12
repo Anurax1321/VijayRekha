@@ -207,14 +207,13 @@ public class VijayRekha {
   public void finalResult() {
     if (this.chosen == 1) {
 
-
-      //
-      int diff;
+      int diff = 0;
 
       //This loop is to set the header elements into the 2D Array at the top
-      for (int i = 0; i < headNumber; i++) {
-        if (combine[0][i].endsWith("Gly")){
-          diff=i;
+      for (int i = 1; i < headNumber; i++) {
+        if (combine[0][i].endsWith("Gly")) {
+          // variable to store the index of the different factor compound
+          diff = i;
         }
       }
 
@@ -223,12 +222,24 @@ public class VijayRekha {
       //The first loop is to go through each row at a time; starting from 1 instead of 0
       for (int i = 1; i <= limit; i++) {
         // printing patient names at the beginning before values
-//        System.out.println(combine[i][0]);
+        //        System.out.println(combine[i][0]);
         // the second loop goes through each column per row
-//        for (int j = 1; j < head.size(); j++) {
-//          // printing in all the values for one patient and going to the next one
-//          System.out.print(combine[i][j] + " , ");
-//        }
+        for (int j = 1; j < headNumber; j++) {
+
+
+          try {
+            if (j == diff && diff > 0) {
+              combine[i][j] = String.valueOf(Double.valueOf(combine[i][j])*403.0);
+            } else {
+              combine[i][j] = String.valueOf(Double.valueOf(combine[i][j])*80.6);
+            }
+          } catch (Exception e) {
+            combine[i][j] = "N/A";
+          }
+
+          // printing in all the values for one patient and going to the next one
+          System.out.print(combine[i][j] + " , ");
+        }
         System.out.println();
         // Adding a new line after each row; for tabular print; excel representation
       }
