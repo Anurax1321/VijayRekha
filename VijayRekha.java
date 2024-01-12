@@ -210,7 +210,9 @@ public class VijayRekha {
 
       //This loop is to set the header elements into the 2D Array at the top
       for (int i = 0; i < headNumber; i++) {
-        System.out.print(combine[0][i] + " , ");
+        if (combine[0][i].contains("Ala")){
+          System.out.println("Ala checked in");
+        }
       }
 
 
@@ -220,10 +222,10 @@ public class VijayRekha {
         // printing patient names at the beginning before values
 //        System.out.println(combine[i][0]);
         // the second loop goes through each column per row
-        for (int j = 1; j < head.size(); j++) {
-          // printing in all the values for one patient and going to the next one
-          System.out.print(combine[i][j] + " , ");
-        }
+//        for (int j = 1; j < head.size(); j++) {
+//          // printing in all the values for one patient and going to the next one
+//          System.out.print(combine[i][j] + " , ");
+//        }
         System.out.println();
         // Adding a new line after each row; for tabular print; excel representation
       }
