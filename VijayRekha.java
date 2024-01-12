@@ -175,7 +175,7 @@ public class VijayRekha {
   /**
    * This is a helper method to combine the Arraylists to one 2D array
    */
-  public void setCombine(){
+  public void setCombine() {
 
     //This loop is to set the header elements into the 2D Array at the top
     for (int i = 0; i < headNumber; i++) {
@@ -232,26 +232,33 @@ public class VijayRekha {
 
     // Data Paths for AA, AC, ACEXT; given by the user
     String filepath1 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AA.txt";
-    //    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
-    //    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
+    String filepath2 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_AC.txt";
+    String filepath3 = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\08012024_ACEXT.txt";
 
     // creating the object of the class with the parameters
-    VijayRekha result = new VijayRekha(limit + 4, 1);
-
+    VijayRekha result1 = new VijayRekha(limit + 4, 1);
     // the 2D Array for the AA dataset
-    String[][] results1 = result.readData(filepath1);
+    String[][] results1 = result1.readData(filepath1);
     // printing the 2D Array
-    result.print2DArray(results1);
+    result1.print2DArray(results1);
 
-    // the 2D Array for the AC dataset
-    //    String[][] results2 = result.readData(filepath2);
-    // printing the 2D Array
-    //    System.out.println(results2);
+    System.out.println("*************************************************************************");
 
+    // creating the object of the class with the parameters
+    VijayRekha result2 = new VijayRekha(limit + 4, 2);
+    //     the 2D Array for the AC dataset
+    String[][] results2 = result2.readData(filepath2);
+    //     printing the 2D Array
+    result2.print2DArray(results2);
+
+    System.out.println("*************************************************************************");
+
+    // creating the object of the class with the parameters
+    VijayRekha result3 = new VijayRekha(limit + 4, 3);
     // the 2D Array for the ACEXT dataset
-    //    String[][] results3 = result.readData(filepath3);
+    String[][] results3 = result3.readData(filepath3);
     // printing the 2D Array
-    //    System.out.println(results3);
+    result3.print2DArray(results3);
 
   }
 }
