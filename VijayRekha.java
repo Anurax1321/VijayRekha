@@ -189,7 +189,7 @@ public class VijayRekha {
       combine[0][i] = head.get(i);
     }
 
-    //The first loop is to go through each row at a time
+    //The first loop is to go through each row at a time; starting from 1 instead of 0
     for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
       // adding patient names at the beginning before adding in the values
       combine[i][0] = patientNames.get(i - 1);
@@ -207,15 +207,13 @@ public class VijayRekha {
   public void finalResult() {
     if (this.chosen == 1) {
 
-      
-      //The first loop is to go through each row at a time
-      for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
-        // adding patient names at the beginning before adding in the values
-        combine[i][0] = patientNames.get(i - 1);
+
+      //The first loop is to go through each row at a time; starting from 1 instead of 0
+      for (int i = 1; i <= limit; i++) {
         // the second loop goes through each column per row
-        for (int j = 1; j < head.size(); j++, k++) {
+        for (int j = 1; j < head.size(); j++) {
           // setting in all the values for one patient and going to the next one
-          combine[i][j] = responses.get(k);
+          System.out.println(combine[i][j]);
         }
       }
 
