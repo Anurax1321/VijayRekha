@@ -210,7 +210,7 @@ public class VijayRekha {
 
       //This loop is to set the header elements into the 2D Array at the top
       for (int i = 0; i < headNumber; i++) {
-        if (combine[0][i].contains("Ala")){
+        if (combine[0][i].endsWith("Ala")){
           System.out.println(combine[0][i]);
           System.out.println("Ala checked in");
         }
