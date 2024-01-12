@@ -218,7 +218,7 @@ public class VijayRekha {
       //The first loop is to go through each row at a time; starting from 1 instead of 0
       for (int i = 1; i <= limit; i++) {
         // printing patient names at the beginning before values
-        System.out.println(combine[i][0]);
+//        System.out.println(combine[i][0]);
         // the second loop goes through each column per row
         for (int j = 1; j < head.size(); j++) {
           // printing in all the values for one patient and going to the next one
