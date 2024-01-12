@@ -213,7 +213,7 @@ public class VijayRekha {
         // the second loop goes through each column per row
         for (int j = 1; j < head.size(); j++) {
           // printing in all the values for one patient and going to the next one
-          System.out.println(combine[i][j]);
+          System.out.print(combine[i][j] + " , ");
         }
         System.out.println();
         // Adding a new line after each row; for tabular print; excel representation
