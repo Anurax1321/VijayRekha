@@ -208,6 +208,13 @@ public class VijayRekha {
     if (this.chosen == 1) {
 
 
+      //This loop is to set the header elements into the 2D Array at the top
+      for (int i = 0; i < headNumber; i++) {
+        System.out.println(combine[0][i]);
+      }
+
+
+
       //The first loop is to go through each row at a time; starting from 1 instead of 0
       for (int i = 1; i <= limit; i++) {
         // printing patient names at the beginning before values
