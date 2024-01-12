@@ -32,6 +32,9 @@ public class VijayRekha {
   // Variable to store the number of header elements based on the data set
   int headNumber;
 
+  // Variable to store the chosen dataset
+  int chosen;
+
   /**
    * This is a constructor which takes in two parameters and assignees (HardCoding) it ot the global
    * variable that is used further in the code. there is an if-else which decide how many number of
@@ -44,14 +47,18 @@ public class VijayRekha {
    *                 header elements
    */
   public VijayRekha(int limit, int headType) throws IllegalArgumentException {
+    
     // number of patients
     this.limit = limit;
-    // assigning (HardCoding) the headNumber based on headType
-    if (headType == 1) { // AA
+    // chosen type of data set
+    this.chosen=headType;
+
+    // assigning (HardCoding) the headNumber based on the type of the data set given by the user
+    if (this.chosen == 1) { // AA
       this.headNumber = 29; // no. of compounds in the data set
-    } else if (headType == 2) { // AC
+    } else if (this.chosen == 2) { // AC
       this.headNumber = 27; // no. of compounds in the data set
-    } else if (headType == 3) { // ACEXT
+    } else if (this.chosen == 3) { // ACEXT
       this.headNumber = 35; // no. of compounds in the data set
     } else {
       throw new IllegalArgumentException("invalid input!! try again");
