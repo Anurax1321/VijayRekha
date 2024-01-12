@@ -47,11 +47,11 @@ public class VijayRekha {
    *                 header elements
    */
   public VijayRekha(int limit, int headType) throws IllegalArgumentException {
-    
+
     // number of patients
     this.limit = limit;
     // chosen type of data set
-    this.chosen=headType;
+    this.chosen = headType;
 
     // assigning (HardCoding) the headNumber based on the type of the data set given by the user
     if (this.chosen == 1) { // AA
@@ -198,6 +198,16 @@ public class VijayRekha {
         // setting in all the values for one patient and going to the next one
         combine[i][j] = responses.get(k);
       }
+    }
+  }
+
+  public void finalResult(){
+    if(this.chosen==1){
+      System.out.println("AA");
+    } else if (this.chosen==2) {
+      System.out.println("AC");
+    } else if (this.chosen==3) {
+      System.out.println("ACEXT");
     }
   }
 
