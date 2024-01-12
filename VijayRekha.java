@@ -201,12 +201,12 @@ public class VijayRekha {
     }
   }
 
-  public void finalResult(){
-    if(this.chosen==1){
+  public void finalResult() {
+    if (this.chosen == 1) {
       System.out.println("AA");
-    } else if (this.chosen==2) {
+    } else if (this.chosen == 2) {
       System.out.println("AC");
-    } else if (this.chosen==3) {
+    } else if (this.chosen == 3) {
       System.out.println("ACEXT");
     }
   }
@@ -257,27 +257,27 @@ public class VijayRekha {
     // the 2D Array for the AA dataset
     String[][] results1 = result1.readData(filepath1);
     // printing the 2D Array
-//    result1.print2DArray(results1);
+    //    result1.print2DArray(results1);
     result1.finalResult();
 
-//    System.out.println("*************************************************************************");
+    //    System.out.println("*************************************************************************");
 
     // creating the object of the class with the parameters
     VijayRekha result2 = new VijayRekha(limit + 4, 2);
     //     the 2D Array for the AC dataset
     String[][] results2 = result2.readData(filepath2);
     //     printing the 2D Array
-//    result2.print2DArray(results2);
+    //    result2.print2DArray(results2);
     result2.finalResult();
 
-//    System.out.println("*************************************************************************");
+    //    System.out.println("*************************************************************************");
 
     // creating the object of the class with the parameters
     VijayRekha result3 = new VijayRekha(limit + 4, 3);
     // the 2D Array for the ACEXT dataset
     String[][] results3 = result3.readData(filepath3);
     // printing the 2D Array
-//    result3.print2DArray(results3);
+    //    result3.print2DArray(results3);
     result3.finalResult();
 
   }
