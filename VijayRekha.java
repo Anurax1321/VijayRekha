@@ -172,6 +172,7 @@ public class VijayRekha {
             // adding the patients names to the arraylist
             patientNames.add(dataLine[1]);
           }
+          // only getting the response for compounds that we want to use in the final result
           if (j <= headNumber) {
             // adding the responses to the arraylist; one compound after the other per one patient
             // to another until the last patient is reached in the refined data in chronological order
@@ -199,6 +200,8 @@ public class VijayRekha {
       // the second loop goes through each column per row
       for (int j = 1; j < headNumber; j++, k++) {
         // setting in all the values for one patient and going to the next one
+
+        print2DArray(combine);
         combine[i][j] = responses.get(k);
       }
     }
