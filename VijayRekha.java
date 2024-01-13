@@ -234,7 +234,7 @@ public class VijayRekha {
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
           if (j >= nothing) {
-            // stopping the iteration
+            // stopping the iteration for useful data
             combine[i][j] = "noo";
           } else if (j == diff && diff > 0) {
             // the one compound that has a different factor
