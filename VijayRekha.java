@@ -253,6 +253,7 @@ public class VijayRekha {
       //      print2DArray(combine);
       // printing a confirmation
       System.out.println("AA data set is done; onto the next one");
+      System.out.println("");
 
     } else if (this.chosen == 2) {
 
@@ -261,8 +262,7 @@ public class VijayRekha {
       // printing the final results after the factor-in
       print2DArray(combine);
       System.out.println("AC");
-      System.out.println("");
-      
+
     } else if (this.chosen == 3) {
       System.out.println("ACEXT");
     }
