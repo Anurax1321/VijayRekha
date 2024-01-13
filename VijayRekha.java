@@ -161,7 +161,7 @@ public class VijayRekha {
       // pattern to match the number at the beginning with the patient number.
       String pattern = "^" + i + "\\D";
       // The second loop goes through each line in the refined data using 'j' as index
-      for (int j = 0, k; j < data.size(); j++) {
+      for (int j = 0, k=-1; j < data.size(); j++) { // "k" is used further in the loop
         if (data.get(j).matches(pattern + ".*")) { // matching
 
           // Array to store each line of the data ArrayList after the split as words
@@ -171,13 +171,16 @@ public class VijayRekha {
           if (!(patientNames.contains(dataLine[1]))) {
             // adding the patients names to the arraylist
             patientNames.add(dataLine[1]);
-
+            // variable to store the start of input for response per patient name
+            k=1;
           }
           // only getting the response for compounds that we want to use in the final result
-          if (j <= headNumber) {
+          if (k>0 && k<headNumber) {
             // adding the responses to the arraylist; one compound after the other per one patient
             // to another until the last patient is reached in the refined data in chronological order
             responses.add(dataLine[dataLine.length - 1]);
+            // incrementing k
+            k++;
           }
         }
       }
