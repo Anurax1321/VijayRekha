@@ -233,9 +233,6 @@ public class VijayRekha {
         for (int j = 1; j < headNumber; j++) {
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
-
-          // handling the exceptions possible
-          try {
             if (j == diff && diff > 0) {
               // the one compound that has a different factor
               combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
@@ -246,9 +243,6 @@ public class VijayRekha {
               // all other compound where the factor is same
               combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
             }
-        } catch(Exception e){
-          combine[i][j] = "N/A";
-        }
       }
     }
     // printing the final results after the factor-in
