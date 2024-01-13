@@ -204,8 +204,6 @@ public class VijayRekha {
       // the second loop goes through each column per row
       for (int j = 1; j < headNumber; j++, k++) {
         // setting in all the values for one patient and going to the next one
-
-        print2DArray(combine);
         combine[i][j] = responses.get(k);
       }
     }
