@@ -56,7 +56,7 @@ public class VijayRekha {
 
     // assigning (HardCoding) the headNumber based on the type of the data set given by the user
     if (this.chosen == 1) { // AA
-      this.headNumber = 14; // no. of compounds in the data set
+      this.headNumber = 15; // no. of compounds in the data set
     } else if (this.chosen == 2) { // AC
       this.headNumber = 14; // no. of compounds in the data set
     } else if (this.chosen == 3) { // ACEXT
@@ -234,26 +234,29 @@ public class VijayRekha {
         }
       }
 
-      // rounding off to four decimal places
-      DecimalFormat deciFormat = new DecimalFormat("#.####");
-      //The first loop is to go through each row at a time; starting from 1 instead of 0
-      for (int i = 1; i <= limit; i++) {
-        // The second loop is used to go through each column at a time; again starting from 1
-        for (int j = 1; j < headNumber; j++) {
-          if (j == diff && diff > 0) {
-            // the one compound that has a different factor
-            combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
-          } else {
-            // all other compound where the factor is same
-            combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
+      try {
+        // rounding off to four decimal places
+        DecimalFormat deciFormat = new DecimalFormat("#.####");
+        //The first loop is to go through each row at a time; starting from 1 instead of 0
+        for (int i = 1; i <= limit; i++) {
+          // The second loop is used to go through each column at a time; again starting from 1
+          for (int j = 1; j < headNumber; j++) {
+            if (j == diff && diff > 0) {
+              // the one compound that has a different factor
+              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
+            } else {
+              // all other compound where the factor is same
+              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
+            }
           }
         }
+      } catch (Exception e) {
       }
-      //      // printing the final results after the factor-in
-      //      print2DArray(combine);
+      // printing the final results after the factor-in
+      print2DArray(combine);
       // printing a confirmation
-      System.out.println("AA data set is done; onto the next one");
-      System.out.println("");
+      //      System.out.println("AA data set is done; onto the next one");
+      //      System.out.println("");
 
     } else if (this.chosen == 2) {
 
