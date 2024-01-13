@@ -56,7 +56,7 @@ public class VijayRekha {
 
     // assigning (HardCoding) the headNumber based on the type of the data set given by the user
     if (this.chosen == 1) { // AA
-      this.headNumber = 29; // no. of compounds in the data set
+      this.headNumber = 14; // no. of compounds in the data set
     } else if (this.chosen == 2) { // AC
       this.headNumber = 27; // no. of compounds in the data set
     } else if (this.chosen == 3) { // ACEXT
@@ -195,7 +195,7 @@ public class VijayRekha {
       // adding patient names at the beginning before adding in the values
       combine[i][0] = patientNames.get(i - 1);
       // the second loop goes through each column per row
-      for (int j = 1; j < head.size(); j++, k++) {
+      for (int j = 1; j < headNumber; j++, k++) {
         // setting in all the values for one patient and going to the next one
         combine[i][j] = responses.get(k);
       }
@@ -233,12 +233,12 @@ public class VijayRekha {
         for (int j = 1; j < headNumber; j++) {
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
-          if (j == diff && diff > 0) {
+          if (j >= nothing) {
+            // stopping the iteration
+            combine[i][j] = "noo";
+          } else if (j == diff && diff > 0) {
             // the one compound that has a different factor
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
-          } else if (j >= nothing) {
-            // stopping the iteration
-            combine[i][j]="noo";
           } else {
             // all other compound where the factor is same
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
