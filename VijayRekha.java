@@ -231,25 +231,24 @@ public class VijayRekha {
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
 
+          // handling the exceptions possible
           try {
             if (j == diff && diff > 0) {
               combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
             } else {
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j])*80.6);
+              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
             }
           } catch (Exception e) {
             combine[i][j] = "N/A";
           }
-
-          // printing in all the values for one patient and going to the next one
-          System.out.print(combine[i][j] + " , ");
         }
-        System.out.println();
-        // Adding a new line after each row; for tabular print; excel representation
+        // printing the final results after the factor-in
+        print2DArray(combine);
       }
+      System.out.println("AA is done, onto the next one");
 
 
-      System.out.println("AA");
+
 
     } else if (this.chosen == 2) {
       System.out.println("AC");
