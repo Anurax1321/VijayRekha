@@ -249,8 +249,10 @@ public class VijayRekha {
           }
         }
       }
-      // printing the final results after the factor-in
-      print2DArray(combine);
+//      // printing the final results after the factor-in
+//      print2DArray(combine);
+      // printing a confirmation
+      System.out.println("AA data set is done; onto the next one");
 
     } else if (this.chosen == 2) {
 
