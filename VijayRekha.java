@@ -227,18 +227,23 @@ public class VijayRekha {
         }
       }
 
+      // rounding off to four decimal places
+      DecimalFormat deciFormat = new DecimalFormat("#.####");
       //The first loop is to go through each row at a time; starting from 1 instead of 0
       for (int i = 1; i <= limit; i++) {
         // The second loop is used to go through each column at a time; again starting from 1
         for (int j = 1; j < headNumber; j++) {
-          // rounding off to four decimal places
-          DecimalFormat deciFormat = new DecimalFormat("#.####");
+          // error handling
+          try{
           if (j == diff && diff > 0) {
             // the one compound that has a different factor
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
           } else {
             // all other compound where the factor is same
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
+          }
+        }catch (Exception e){
+            combine[i][j]="N/A";
           }
         }
       }
