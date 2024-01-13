@@ -172,9 +172,11 @@ public class VijayRekha {
             // adding the patients names to the arraylist
             patientNames.add(dataLine[1]);
           }
-          // adding the responses to the arraylist; one compound after the other per one patient
-          // to another until the last patient is reached in the refined data in chronological order
-          responses.add(dataLine[dataLine.length - 1]);
+          if (j <= headNumber) {
+            // adding the responses to the arraylist; one compound after the other per one patient
+            // to another until the last patient is reached in the refined data in chronological order
+            responses.add(dataLine[dataLine.length - 1]);
+          }
         }
       }
     }
