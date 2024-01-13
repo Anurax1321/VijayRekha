@@ -238,7 +238,7 @@ public class VijayRekha {
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
           } else if (j >= nothing) {
             // stopping the iteration
-            break;
+            combine[i][j]="noo";
           } else {
             // all other compound where the factor is same
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
