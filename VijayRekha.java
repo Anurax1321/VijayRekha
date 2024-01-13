@@ -58,7 +58,7 @@ public class VijayRekha {
     if (this.chosen == 1) { // AA
       this.headNumber = 14; // no. of compounds in the data set
     } else if (this.chosen == 2) { // AC
-      this.headNumber = 27; // no. of compounds in the data set
+      this.headNumber = 14; // no. of compounds in the data set
     } else if (this.chosen == 3) { // ACEXT
       this.headNumber = 35; // no. of compounds in the data set
     } else {
