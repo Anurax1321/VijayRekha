@@ -161,7 +161,7 @@ public class VijayRekha {
       // pattern to match the number at the beginning with the patient number.
       String pattern = "^" + i + "\\D";
       // The second loop goes through each line in the refined data using 'j' as index
-      for (int j = 0, k=-1; j < data.size(); j++) { // "k" is used further in the loop
+      for (int j = 0, k = -1; j < data.size(); j++) { // "k" is used further in the loop
         if (data.get(j).matches(pattern + ".*")) { // matching
 
           // Array to store each line of the data ArrayList after the split as words
@@ -172,10 +172,10 @@ public class VijayRekha {
             // adding the patients names to the arraylist
             patientNames.add(dataLine[1]);
             // variable to store the start of input for response per patient name
-            k=1;
+            k = 1;
           }
           // only getting the response for compounds that we want to use in the final result
-          if (k>0 && k<headNumber) {
+          if (k > 0 && k < headNumber) {
             // adding the responses to the arraylist; one compound after the other per one patient
             // to another until the last patient is reached in the refined data in chronological order
             responses.add(dataLine[dataLine.length - 1]);
@@ -240,17 +240,12 @@ public class VijayRekha {
       for (int i = 1; i <= limit; i++) {
         // The second loop is used to go through each column at a time; again starting from 1
         for (int j = 1; j < headNumber; j++) {
-          // error handling
-          try {
-            if (j == diff && diff > 0) {
-              // the one compound that has a different factor
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
-            } else {
-              // all other compound where the factor is same
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
-            }
-          } catch (Exception e) {
-            combine[i][j] = "N/A";
+          if (j == diff && diff > 0) {
+            // the one compound that has a different factor
+            combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
+          } else {
+            // all other compound where the factor is same
+            combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
           }
         }
       }
