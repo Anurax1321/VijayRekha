@@ -200,10 +200,14 @@ public class VijayRekha {
         combine[i][j] = responses.get(k);
       }
     }
+    // Handling the Response and factor-in value replacement
+    finalResult();
+
   }
 
   /**
-   *
+   * This is method to replace the response values with their corresponding factor-in values
+   * It handles different data-sets
    */
   public void finalResult() {
     if (this.chosen == 1) {
@@ -246,13 +250,13 @@ public class VijayRekha {
       // printing the final results after the factor-in
       print2DArray(combine);
 
-
-
-
-
-
-      
     } else if (this.chosen == 2) {
+
+
+
+
+
+
       System.out.println("AC");
     } else if (this.chosen == 3) {
       System.out.println("ACEXT");
@@ -306,7 +310,6 @@ public class VijayRekha {
     String[][] results1 = result1.readData(filepath1);
     // printing the 2D Array
     //    result1.print2DArray(results1);
-    result1.finalResult();
 
     //    System.out.println("*************************************************************************");
 
@@ -316,7 +319,6 @@ public class VijayRekha {
     String[][] results2 = result2.readData(filepath2);
     //     printing the 2D Array
     //    result2.print2DArray(results2);
-    result2.finalResult();
 
     //    System.out.println("*************************************************************************");
 
@@ -326,7 +328,6 @@ public class VijayRekha {
     String[][] results3 = result3.readData(filepath3);
     // printing the 2D Array
     //    result3.print2DArray(results3);
-    result3.finalResult();
 
   }
 }
