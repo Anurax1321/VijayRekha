@@ -206,32 +206,31 @@ public class VijayRekha {
   }
 
   /**
-   * This is method to replace the response values with their corresponding factor-in values
-   * It handles different data-sets
+   * This is method to replace the response values with their corresponding factor-in values It
+   * handles different data-sets
    */
   public void finalResult() {
-    if (this.chosen == 1) {
-
+    // checking what dataset I am handling
+    if (this.chosen == 1) { // AA Data-Set
+      // variable to store the index of different fact-in value; there is only one
       int diff = 0;
+      //variable to store the limit of our useful data; anything above this index is not useful
+      int nothing = -1;
 
       //This loop is to set the header elements into the 2D Array at the top
       for (int i = 1; i < headNumber; i++) {
         if (combine[0][i].endsWith("Gly")) {
           // variable to store the index of the different factor compound
           diff = i;
+        } else if (combine[0][i].endsWith("Suac")) {
+          nothing = i;
         }
       }
 
-
-
       //The first loop is to go through each row at a time; starting from 1 instead of 0
       for (int i = 1; i <= limit; i++) {
-        // printing patient names at the beginning before values
-        //        System.out.println(combine[i][0]);
-        // the second loop goes through each column per row
+        // The second loop is used to go through each column at a time; again starting from 1
         for (int j = 1; j < headNumber; j++) {
-
-
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
 
@@ -239,29 +238,33 @@ public class VijayRekha {
           try {
             if (j == diff && diff > 0) {
               combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
+            } else if (j>=nothing) {
+              break;
             } else {
               combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
             }
-          } catch (Exception e) {
-            combine[i][j] = "N/A";
-          }
+        } catch(Exception e){
+          combine[i][j] = "N/A";
         }
       }
-      // printing the final results after the factor-in
-      print2DArray(combine);
-
-    } else if (this.chosen == 2) {
-
-
-
-
-
-
-      System.out.println("AC");
-    } else if (this.chosen == 3) {
-      System.out.println("ACEXT");
     }
+    // printing the final results after the factor-in
+    print2DArray(combine);
+
+  } else if(this.chosen ==2)
+
+  {
+
+
+
+    System.out.println("AC");
+  } else if(this.chosen ==3)
+
+  {
+    System.out.println("ACEXT");
   }
+
+}
 
   /**
    * This is a helper method to print the elements in the 2D Array in the form of an Excel
