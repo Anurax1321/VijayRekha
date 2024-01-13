@@ -1,6 +1,7 @@
 //Import statements
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -227,11 +228,16 @@ public class VijayRekha {
         for (int j = 1; j < headNumber; j++) {
 
 
+          // rounding off to four decimal places
+          DecimalFormat deciFormat = new DecimalFormat("#.####");
+
           try {
             if (j == diff && diff > 0) {
-              combine[i][j] = String.valueOf(Double.valueOf(combine[i][j])*403.0);
+              combine[i][j] = DecimalFormat.getCompactNumberInstance()
+                  .format(Double.valueOf(combine[i][j]) * 403.0);
             } else {
-              combine[i][j] = String.valueOf(Double.valueOf(combine[i][j])*80.6);
+              combine[i][j] = DecimalFormat.getCompactNumberInstance()
+                  .format(Double.valueOf(combine[i][j])*80.6);
             }
           } catch (Exception e) {
             combine[i][j] = "N/A";
