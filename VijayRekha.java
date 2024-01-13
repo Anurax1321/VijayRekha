@@ -242,14 +242,16 @@ public class VijayRekha {
             combine[i][j] = "N/A";
           }
         }
-        // printing the final results after the factor-in
-        print2DArray(combine);
       }
-      System.out.println("AA is done, onto the next one");
+      // printing the final results after the factor-in
+      print2DArray(combine);
 
 
 
 
+
+
+      
     } else if (this.chosen == 2) {
       System.out.println("AC");
     } else if (this.chosen == 3) {
