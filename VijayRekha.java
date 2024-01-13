@@ -233,11 +233,9 @@ public class VijayRekha {
 
           try {
             if (j == diff && diff > 0) {
-              combine[i][j] = DecimalFormat.getCompactNumberInstance()
-                  .format(Double.valueOf(combine[i][j]) * 403.0);
+              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
             } else {
-              combine[i][j] = DecimalFormat.getCompactNumberInstance()
-                  .format(Double.valueOf(combine[i][j])*80.6);
+              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j])*80.6);
             }
           } catch (Exception e) {
             combine[i][j] = "N/A";
