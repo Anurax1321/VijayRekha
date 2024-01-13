@@ -233,10 +233,7 @@ public class VijayRekha {
         for (int j = 1; j < headNumber; j++) {
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
-          if (j >= nothing) {
-            // stopping the iteration for useful data
-            combine[i][j] = "noo";
-          } else if (j == diff && diff > 0) {
+          if (j == diff && diff > 0) {
             // the one compound that has a different factor
             combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
           } else {
