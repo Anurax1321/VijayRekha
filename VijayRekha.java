@@ -233,35 +233,31 @@ public class VijayRekha {
         for (int j = 1; j < headNumber; j++) {
           // rounding off to four decimal places
           DecimalFormat deciFormat = new DecimalFormat("#.####");
-            if (j == diff && diff > 0) {
-              // the one compound that has a different factor
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
-            } else if (j>=nothing) {
-              // stopping the iteration
-              break;
-            } else {
-              // all other compound where the factor is same
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
-            }
+          if (j == diff && diff > 0) {
+            // the one compound that has a different factor
+            combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
+          } else if (j >= nothing) {
+            // stopping the iteration
+            break;
+          } else {
+            // all other compound where the factor is same
+            combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
+          }
+        }
       }
+      // printing the final results after the factor-in
+      print2DArray(combine);
+
+    } else if (this.chosen == 2) {
+
+
+
+      System.out.println("AC");
+    } else if (this.chosen == 3) {
+      System.out.println("ACEXT");
     }
-    // printing the final results after the factor-in
-    print2DArray(combine);
 
-  } else if(this.chosen ==2)
-
-  {
-
-
-
-    System.out.println("AC");
-  } else if(this.chosen ==3)
-
-  {
-    System.out.println("ACEXT");
   }
-
-}
 
   /**
    * This is a helper method to print the elements in the 2D Array in the form of an Excel
