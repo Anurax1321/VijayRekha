@@ -84,8 +84,8 @@ public class VijayRekha {
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
 
-      // calling the helper methods
-      data = processData(scan, data);
+      // extracting the data
+      useData(processData(scan, data));
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
@@ -94,6 +94,9 @@ public class VijayRekha {
       // extraction of the data completed
       // now we combine these ArrayLists into one 2D Array
       setCombine();
+
+      // Handling the Response and factor-in value replacement
+      finalResult();
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
@@ -207,9 +210,6 @@ public class VijayRekha {
         combine[i][j] = responses.get(k);
       }
     }
-    // Handling the Response and factor-in value replacement
-    finalResult();
-
   }
 
   /**
