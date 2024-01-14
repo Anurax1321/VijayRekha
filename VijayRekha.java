@@ -85,7 +85,7 @@ public class VijayRekha {
       ArrayList<String> data = new ArrayList<>();
 
       // calling the helper methods
-      processData(scan, data);
+      data = processData(scan, data);
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
@@ -112,7 +112,7 @@ public class VijayRekha {
    *             trimming
    * @return the Arraylist filled with usable data from the dataset
    */
-  public void processData(Scanner scan, ArrayList<String> data) {
+  public ArrayList<String> processData(Scanner scan, ArrayList<String> data) {
 
     //add "Name" column to the header; this comes before all compounds processed
     head.add("Name");
@@ -135,8 +135,8 @@ public class VijayRekha {
         }
       }
     }
-    // calling another helper method to finish the complete the extraction of data
-    useData(data);
+    // returning the arraylist of the refined data
+    return data;
   }
 
 
