@@ -22,7 +22,7 @@ public class VijayRekha {
   ArrayList<String> patientNames = new ArrayList<>();
 
   // ArrayList to store the responses for all the compounds per patient
-  ArrayList<String> responses = new ArrayList<>();
+  ArrayList<Double> finalResult = new ArrayList<>();
 
   // 2D array to store the Excl represented values
   String[][] combine;
@@ -84,8 +84,8 @@ public class VijayRekha {
       // ArrayList to store the whole data that I need the information from;
       ArrayList<String> data = new ArrayList<>();
 
-      // calling the helper methods
-      processData(scan, data);
+      // extracting the data
+      useData(processData(scan, data));
 
       //      System.out.println(head);
       //      System.out.println(patientNames);
@@ -94,6 +94,9 @@ public class VijayRekha {
       // extraction of the data completed
       // now we combine these ArrayLists into one 2D Array
       setCombine();
+
+      // Handling the Response and factor-in value replacement
+      finalResult();
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
@@ -112,7 +115,7 @@ public class VijayRekha {
    *             trimming
    * @return the Arraylist filled with usable data from the dataset
    */
-  public void processData(Scanner scan, ArrayList<String> data) {
+  public ArrayList<String> processData(Scanner scan, ArrayList<String> data) {
 
     //add "Name" column to the header; this comes before all compounds processed
     head.add("Name");
@@ -135,8 +138,8 @@ public class VijayRekha {
         }
       }
     }
-    // calling another helper method to finish the complete the extraction of data
-    useData(data);
+    // returning the arraylist of the refined data
+    return data;
   }
 
 
@@ -178,7 +181,7 @@ public class VijayRekha {
           if (k > 0 && k < headNumber) {
             // adding the responses to the arraylist; one compound after the other per one patient
             // to another until the last patient is reached in the refined data in chronological order
-            responses.add(dataLine[dataLine.length - 1]);
+            finalResult.add(dataLine[dataLine.length - 1]);
             // incrementing k
             k++;
           }
@@ -198,18 +201,15 @@ public class VijayRekha {
     }
 
     //The first loop is to go through each row at a time; starting from 1 instead of 0
-    for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
+    for (int i = 1, k = 0; i <= limit && k < finalResult.size(); i++) {
       // adding patient names at the beginning before adding in the values
       combine[i][0] = patientNames.get(i - 1);
       // the second loop goes through each column per row
       for (int j = 1; j < headNumber; j++, k++) {
         // setting in all the values for one patient and going to the next one
-        combine[i][j] = responses.get(k);
+        combine[i][j] = finalResult.get(k);
       }
     }
-    // Handling the Response and factor-in value replacement
-    finalResult();
-
   }
 
   /**
