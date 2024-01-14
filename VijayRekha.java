@@ -22,7 +22,7 @@ public class VijayRekha {
   ArrayList<String> patientNames = new ArrayList<>();
 
   // ArrayList to store the responses for all the compounds per patient
-  ArrayList<String> responses = new ArrayList<>();
+  ArrayList<Double> finalResult = new ArrayList<>();
 
   // 2D array to store the Excl represented values
   String[][] combine;
@@ -181,7 +181,7 @@ public class VijayRekha {
           if (k > 0 && k < headNumber) {
             // adding the responses to the arraylist; one compound after the other per one patient
             // to another until the last patient is reached in the refined data in chronological order
-            responses.add(dataLine[dataLine.length - 1]);
+            finalResult.add(dataLine[dataLine.length - 1]);
             // incrementing k
             k++;
           }
@@ -201,13 +201,13 @@ public class VijayRekha {
     }
 
     //The first loop is to go through each row at a time; starting from 1 instead of 0
-    for (int i = 1, k = 0; i <= limit && k < responses.size(); i++) {
+    for (int i = 1, k = 0; i <= limit && k < finalResult.size(); i++) {
       // adding patient names at the beginning before adding in the values
       combine[i][0] = patientNames.get(i - 1);
       // the second loop goes through each column per row
       for (int j = 1; j < headNumber; j++, k++) {
         // setting in all the values for one patient and going to the next one
-        combine[i][j] = responses.get(k);
+        combine[i][j] = finalResult.get(k);
       }
     }
   }
