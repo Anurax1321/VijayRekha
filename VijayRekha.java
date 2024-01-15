@@ -120,7 +120,7 @@ public class VijayRekha {
     //add "Name" column to the header; this comes before all compounds processed
     head.add("Name");
     //variable to store the number of compound in the head arraylist
-    int i = 1;
+    int i = 1; // already added "Name" into head Arraylist
     // looping through all the lines of the data set
     while (scan.hasNextLine()) {
       // getting each line of the data set
