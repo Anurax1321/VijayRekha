@@ -77,7 +77,7 @@ public class VijayRekha {
    * @return the 2D array that we get after the extraction of data; Excel data representation
    * @throws FileNotFoundException when the data path is not resulting in any usable data file
    */
-  public String[][] readData(String filename) throws FileNotFoundException {
+  public void readData(String filename) throws FileNotFoundException {
     try {
       // Scanner object to read the dataset
       Scanner scan = new Scanner(new File(filename)); // taking in the data from the file
@@ -101,7 +101,7 @@ public class VijayRekha {
       throw new FileNotFoundException("Invalid file path! try again");
     }
     // returning the 2D array
-    return combine;
+//    return combine;
   }
 
   /**
