@@ -24,8 +24,8 @@ public class VijayRekha {
   // ArrayList to store the responses for all the compounds per patient
   ArrayList<Double> finalResult = new ArrayList<>();
 
-//  // 2D array to store the Excl represented values
-//  String[][] combine;
+  //  // 2D array to store the Excl represented values
+  //  String[][] combine;
 
   // variable to store the number of patient given by the user
   int limit;
@@ -65,8 +65,8 @@ public class VijayRekha {
       throw new IllegalArgumentException("invalid input!! try again");
     }
 
-//    // created the 2D array to store the Excel representation
-//    combine = new String[limit + 1][headNumber];
+    //    // created the 2D array to store the Excel representation
+    //    combine = new String[limit + 1][headNumber];
   }
 
   /**
@@ -87,9 +87,9 @@ public class VijayRekha {
       // extracting the data
       useData(processData(scan, data));
 
-      //      System.out.println(head);
-      //      System.out.println(patientNames);
-      //      System.out.println(responses);
+      System.out.println(head);
+      System.out.println(patientNames);
+      System.out.println(finalResult);
 
       // extraction of the data completed
       // now we combine these ArrayLists into one 2D Array
