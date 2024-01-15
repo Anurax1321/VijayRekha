@@ -159,10 +159,10 @@ public class VijayRekha {
    */
   public void useData(ArrayList<String> data) {
 
-    for (int j = 0; j < data.size(); j++) {
+    for (int i = 0; i < data.size(); i++) {
 
       // Array to store each line of the data ArrayList after the split as words
-      String[] dataLine = data.get(j).split("\t");
+      String[] dataLine = data.get(i).split("\t");
 
       // checking for duplicates; only adding the unique names one after the other
       if (!(patientNames.contains(dataLine[1]))) {
@@ -170,7 +170,7 @@ public class VijayRekha {
         patientNames.add(dataLine[1]);
       }
       // only getting the response for compounds that we want to use in the final result
-      if (j < headNumber * limit) {
+      if (i < headNumber * limit) {
         // adding the responses to the arraylist; for the compound that we want to use data from
         finalResult.add(Double.valueOf(dataLine[dataLine.length - 1])); // casting string to Double
       }
