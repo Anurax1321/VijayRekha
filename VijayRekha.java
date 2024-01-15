@@ -4,7 +4,10 @@ import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -187,6 +190,35 @@ public class VijayRekha {
       }
     }
   }
+
+  public void writeToExcel() {
+    // Excel file path
+    String excelFilePath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\finalResult.xlsx";
+
+    //creating a workbook
+    Workbook workbook = new HSSFWorkbook();
+    // handling error in case
+    try{
+      // creating a sheet in the Excel
+      Sheet sheet = workbook.createSheet("sheet1");
+
+      for ( int i=0; i<limit+1; i++){
+        // creating rows
+        Row row = sheet.createRow(i);
+        for (int j=0; j< headNumber;j++){
+          Cell cell = row.createCell(j);
+          cell.setCellValue();
+
+        }
+      }
+
+      try (FileOutputStream fileOut = new FileOutputStream(excelFilePath)) {
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
 
   //  /**
   //   * This is a helper method to combine the Arraylists to one 2D array
