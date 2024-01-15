@@ -93,10 +93,10 @@ public class VijayRekha {
 
       // extraction of the data completed
       // now we combine these ArrayLists into one 2D Array
-      setCombine();
+//      setCombine();
 
       // Handling the Response and factor-in value replacement
-      finalResult();
+//      finalResult();
     } catch (FileNotFoundException e) {
       throw new FileNotFoundException("Invalid file path! try again");
     }
