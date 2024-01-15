@@ -119,21 +119,23 @@ public class VijayRekha {
 
     //add "Name" column to the header; this comes before all compounds processed
     head.add("Name");
+    //variable to store the number of compound in the head arraylist
+    int i = 1;
     // looping through all the lines of the data set
     while (scan.hasNextLine()) {
       // getting each line of the data set
       String line = scan.nextLine();
-      if (line != "") {
-        // skipping the lines with nothing in it
+      if (line != "") {  // skipping the lines with nothing in it
+        if (line.startsWith("Compound") && i < headNumber) {
+          // adding all lines that starts with 'compound' into head array
+          head.add(line); // getting the required the compound in the dataset
+          // incrementing 'i'
+          i++;
+        }
         // An Array to store each word of the current line separated by tab
         String[] word = line.split("\t");
-        if (line.startsWith("Compound")) {
-          // adding all lines that starts with 'compound' into head array
-          head.add(line); // getting all the compound in the dataset
-        }
         if (word.length > 1 && line.matches("^\\d.*")) {
-          // only including the lines that have their length greater than one and start with a
-          // number; gets added into the dat array that is returned back and used elsewhere.
+          // including the lines that have their length greater than '1' and start with a number
           data.add(line);
         }
       }
@@ -141,7 +143,6 @@ public class VijayRekha {
     // returning the arraylist of the refined data
     return data;
   }
-
 
   /**
    * This is a helper method to a helper method where we take in refined data and extract the
