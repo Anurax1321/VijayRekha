@@ -317,26 +317,15 @@ public class VijayRekha {
     VijayRekha result1 = new VijayRekha(limit + 4, 1);
     // the 2D Array for the AA dataset
     result1.readData(filepath1);
-    // printing the 2D Array
-    //    result1.print2DArray(results1);
-
-    //    System.out.println("*************************************************************************");
 
     // creating the object of the class with the parameters
     VijayRekha result2 = new VijayRekha(limit + 4, 2);
     //     the 2D Array for the AC dataset
     result2.readData(filepath2);
-    //     printing the 2D Array
-    //    result2.print2DArray(results2);
-
-    //    System.out.println("*************************************************************************");
 
     // creating the object of the class with the parameters
     VijayRekha result3 = new VijayRekha(limit + 4, 3);
     // the 2D Array for the ACEXT dataset
     result3.readData(filepath3);
-    // printing the 2D Array
-    //    result3.print2DArray(results3);
-
   }
 }
