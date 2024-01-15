@@ -190,110 +190,110 @@ public class VijayRekha {
     }
   }
 
-  /**
-   * This is a helper method to combine the Arraylists to one 2D array
-   */
-  public void setCombine() {
+//  /**
+//   * This is a helper method to combine the Arraylists to one 2D array
+//   */
+//  public void setCombine() {
+//
+//    //This loop is to set the header elements into the 2D Array at the top
+//    for (int i = 0; i < headNumber; i++) {
+//      combine[0][i] = head.get(i);
+//    }
+//
+//    //The first loop is to go through each row at a time; starting from 1 instead of 0
+//    for (int i = 1, k = 0; i <= limit && k < finalResult.size(); i++) {
+//      // adding patient names at the beginning before adding in the values
+//      combine[i][0] = patientNames.get(i - 1);
+//      // the second loop goes through each column per row
+//      for (int j = 1; j < headNumber; j++, k++) {
+//        // setting in all the values for one patient and going to the next one
+//        combine[i][j] = finalResult.get(k);
+//      }
+//    }
+//  }
 
-    //This loop is to set the header elements into the 2D Array at the top
-    for (int i = 0; i < headNumber; i++) {
-      combine[0][i] = head.get(i);
-    }
+//  /**
+//   * This is method to replace the response values with their corresponding factor-in values It
+//   * handles different data-sets
+//   */
+//  public void finalResult() {
+//    // checking what dataset I am handling
+//    if (this.chosen == 1) { // AA Data-Set
+//      // variable to store the index of different fact-in value; there is only one
+//      int diff = 0;
+//      //variable to store the limit of our useful data; anything above this index is not useful
+//      int nothing = -1;
+//
+//      //This loop is to set the header elements into the 2D Array at the top
+//      for (int i = 1; i < headNumber; i++) {
+//        if (combine[0][i].endsWith("Gly")) {
+//          // variable to store the index of the different factor compound
+//          diff = i;
+//        } else if (combine[0][i].endsWith("Suac")) {
+//          nothing = i;
+//        }
+//      }
+//
+//      try {
+//        // rounding off to four decimal places
+//        DecimalFormat deciFormat = new DecimalFormat("#.####");
+//        //The first loop is to go through each row at a time; starting from 1 instead of 0
+//        for (int i = 1; i <= limit; i++) {
+//          // The second loop is used to go through each column at a time; again starting from 1
+//          for (int j = 1; j < headNumber; j++) {
+//            if (j == diff && diff > 0) {
+//              // the one compound that has a different factor
+//              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
+//            } else {
+//              // all other compound where the factor is same
+//              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
+//            }
+//          }
+//        }
+//      } catch (Exception e) {
+//      }
+//      // printing the final results after the factor-in
+//      print2DArray(combine);
+//      // printing a confirmation
+//      //      System.out.println("AA data set is done; onto the next one");
+//      //      System.out.println("");
+//
+//    } else if (this.chosen == 2) {
+//
+//
+//
+//      // printing the final results after the factor-in
+//      print2DArray(combine);
+//      System.out.println("AC");
+//
+//    } else if (this.chosen == 3) {
+//      System.out.println("ACEXT");
+//    }
+//
+//  }
 
-    //The first loop is to go through each row at a time; starting from 1 instead of 0
-    for (int i = 1, k = 0; i <= limit && k < finalResult.size(); i++) {
-      // adding patient names at the beginning before adding in the values
-      combine[i][0] = patientNames.get(i - 1);
-      // the second loop goes through each column per row
-      for (int j = 1; j < headNumber; j++, k++) {
-        // setting in all the values for one patient and going to the next one
-        combine[i][j] = finalResult.get(k);
-      }
-    }
-  }
-
-  /**
-   * This is method to replace the response values with their corresponding factor-in values It
-   * handles different data-sets
-   */
-  public void finalResult() {
-    // checking what dataset I am handling
-    if (this.chosen == 1) { // AA Data-Set
-      // variable to store the index of different fact-in value; there is only one
-      int diff = 0;
-      //variable to store the limit of our useful data; anything above this index is not useful
-      int nothing = -1;
-
-      //This loop is to set the header elements into the 2D Array at the top
-      for (int i = 1; i < headNumber; i++) {
-        if (combine[0][i].endsWith("Gly")) {
-          // variable to store the index of the different factor compound
-          diff = i;
-        } else if (combine[0][i].endsWith("Suac")) {
-          nothing = i;
-        }
-      }
-
-      try {
-        // rounding off to four decimal places
-        DecimalFormat deciFormat = new DecimalFormat("#.####");
-        //The first loop is to go through each row at a time; starting from 1 instead of 0
-        for (int i = 1; i <= limit; i++) {
-          // The second loop is used to go through each column at a time; again starting from 1
-          for (int j = 1; j < headNumber; j++) {
-            if (j == diff && diff > 0) {
-              // the one compound that has a different factor
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 403.0);
-            } else {
-              // all other compound where the factor is same
-              combine[i][j] = deciFormat.format(Double.valueOf(combine[i][j]) * 80.6);
-            }
-          }
-        }
-      } catch (Exception e) {
-      }
-      // printing the final results after the factor-in
-      print2DArray(combine);
-      // printing a confirmation
-      //      System.out.println("AA data set is done; onto the next one");
-      //      System.out.println("");
-
-    } else if (this.chosen == 2) {
-
-
-
-      // printing the final results after the factor-in
-      print2DArray(combine);
-      System.out.println("AC");
-
-    } else if (this.chosen == 3) {
-      System.out.println("ACEXT");
-    }
-
-  }
-
-  /**
-   * This is a helper method to print the elements in the 2D Array in the form of an Excel
-   * representation. This method uses nested for loop and helps us to select each element at a time
-   * in the 2d array starting from the left corner of the array
-   *
-   * @param array the 2D array that we want to be printed
-   */
-  public void print2DArray(String[][] array) {
-    // using a nested for loop
-    for (int i = 0; i < array.length; i++) {
-      // the first for-loop goes through all columns of current row
-      // 'i' represents the current row
-      for (int j = 0; j < array[i].length; j++) {
-        // the second for-loop goes through all rows of the current column
-        // 'j' represents the current column
-        System.out.print(array[i][j] + " , ");
-        // printing each element ending with a comma for .excel representation
-      }
-      System.out.println();
-      // Adding a new line after each row; for tabular print; excel representation
-    }
-  }
+//  /**
+//   * This is a helper method to print the elements in the 2D Array in the form of an Excel
+//   * representation. This method uses nested for loop and helps us to select each element at a time
+//   * in the 2d array starting from the left corner of the array
+//   *
+//   * @param array the 2D array that we want to be printed
+//   */
+//  public void print2DArray(String[][] array) {
+//    // using a nested for loop
+//    for (int i = 0; i < array.length; i++) {
+//      // the first for-loop goes through all columns of current row
+//      // 'i' represents the current row
+//      for (int j = 0; j < array[i].length; j++) {
+//        // the second for-loop goes through all rows of the current column
+//        // 'j' represents the current column
+//        System.out.print(array[i][j] + " , ");
+//        // printing each element ending with a comma for .excel representation
+//      }
+//      System.out.println();
+//      // Adding a new line after each row; for tabular print; excel representation
+//    }
+//  }
 
   /**
    * This is the main method where the inputs are taken from the user and passed to the non-static
