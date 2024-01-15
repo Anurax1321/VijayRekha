@@ -171,8 +171,15 @@ public class VijayRekha {
       }
       // only getting the response for compounds that we want to use in the final result
       if (i < headNumber * limit) {
-        // adding the responses to the arraylist; for the compound that we want to use data from
-        finalResult.add(Double.valueOf(dataLine[dataLine.length - 1])); // casting string to Double
+
+        // error handling
+        try {
+          // adding the responses to the arraylist; for the compound that we want to use data from
+          finalResult.add(
+              Double.valueOf(dataLine[dataLine.length - 1])); // casting string to Double
+        } catch (Exception e) {
+          finalResult.add(0.0); // in case of error
+        }
       }
     }
   }
