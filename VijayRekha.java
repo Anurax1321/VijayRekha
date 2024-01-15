@@ -60,7 +60,7 @@ public class VijayRekha {
     } else if (this.chosen == 2) { // AC
       this.headNumber = 14; // no. of compounds in the data set
     } else if (this.chosen == 3) { // ACEXT
-      this.headNumber = 35; // no. of compounds in the data set
+      this.headNumber = 22; // no. of compounds in the data set
     } else {
       throw new IllegalArgumentException("invalid input!! try again");
     }
