@@ -181,7 +181,7 @@ public class VijayRekha {
           if (k > 0 && k < headNumber) {
             // adding the responses to the arraylist; one compound after the other per one patient
             // to another until the last patient is reached in the refined data in chronological order
-            finalResult.add(dataLine[dataLine.length - 1]);
+            finalResult.add(Double.valueOf(dataLine[dataLine.length - 1]));
             // incrementing k
             k++;
           }
