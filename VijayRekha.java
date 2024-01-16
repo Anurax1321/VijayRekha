@@ -225,16 +225,18 @@ public class VijayRekha {
           }
         }
       }
-
-      try (FileOutputStream fileOut = new FileOutputStream(excelFilePath)) {
+      FileOutputStream fileOut = new FileOutputStream(excelFilePath);
+      try {
         workbook.write(fileOut);
         System.out.println("Excel file has been printed successfully. have a great time!");
+      }finally {
+        fileOut.close();
       }
     } catch (IOException e) {
       e.printStackTrace();
     }finally {
       try{
-        workbook.close();
+        file.close();
       }catch (IOException e){
         e.printStackTrace();
       }
