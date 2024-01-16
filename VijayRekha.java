@@ -216,11 +216,11 @@ public class VijayRekha {
           // The first column is patient names
           if (i == 0) {
             // adding in the first column
-            Cell cellPatientNames = row.createCell(j+1);
+            Cell cellPatientNames = row.createCell(j + 1);
             cellPatientNames.setCellValue(patientNames.get(j));
           } else {
             // adding in the final results and values in the cells
-            Cell cellFinalResults = row.createCell(j+1);
+            Cell cellFinalResults = row.createCell(j + 1);
             cellFinalResults.setCellValue(finalResult.get(j));
           }
         }
@@ -229,17 +229,11 @@ public class VijayRekha {
       try {
         workbook.write(fileOut);
         System.out.println("Excel file has been printed successfully. have a great time!");
-      }finally {
+      } finally {
         fileOut.close();
       }
     } catch (IOException e) {
       e.printStackTrace();
-    }finally {
-      try{
-        file.close();
-      }catch (IOException e){
-        e.printStackTrace();
-      }
     }
   }
 
