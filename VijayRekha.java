@@ -215,11 +215,12 @@ public class VijayRekha {
         Cell cellhead = row.createCell(i);
         // assigning the head column of the Excel
         cellhead.setCellValue(head.get(i));
-        for (int j = 0; j < limit + 1; j++) {
+        for (int j = 0; j < limit; j++) {
           // The first column is patient names
           if (i == 0) {
             // adding in the first column
             Cell cellPatientNames = row.createCell(j + 1);
+            System.out.println(patientNames.size());
             cellPatientNames.setCellValue(patientNames.get(j));
           } else {
             // adding in the final results and values in the cells
