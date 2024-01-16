@@ -208,23 +208,26 @@ public class VijayRekha {
       // creating a sheet in the Excel
       Sheet sheet = workbook.createSheet("sheet1"+chosen);
 
+      // creating rows for the head
+      Row rowHead = sheet.createRow(0);
       for (int i = 0; i < headNumber; i++) {
-        // creating rows
-        Row row = sheet.createRow(i);
         // creating a cell with a column number
-        Cell cellhead = row.createCell(i);
+        Cell cellhead = rowHead.createCell(i);
         // assigning the head column of the Excel
         cellhead.setCellValue(head.get(i));
         for (int j = 0; j < limit; j++) {
+
+          // creating rows for patient names
+          Row rowPatient = sheet.createRow(j+1);
           // The first column is patient names
           if (i == 0) {
             // adding in the first column
-            Cell cellPatientNames = row.createCell(j + 1);
+            Cell cellPatientNames = rowPatient.createCell(j+1);
 //            System.out.println(patientNames.size());
             cellPatientNames.setCellValue(patientNames.get(j));
           } else {
             // adding in the final results and values in the cells
-            Cell cellFinalResults = row.createCell(j + 1);
+            Cell cellFinalResults = rowPatient.createCell(j + 1);
             cellFinalResults.setCellValue(finalResult.get(j));
           }
         }
