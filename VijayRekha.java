@@ -199,14 +199,14 @@ public class VijayRekha {
    */
   public void writeToExcel() {
     // Excel file path
-    String excelFilePath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\finalResult.xlsx";
+    String excelFilePath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\finalResult.xls";
 
     //creating a workbook
     Workbook workbook = new HSSFWorkbook();
     // handling error in case
     try {
       // creating a sheet in the Excel
-      Sheet sheet = workbook.createSheet("sheet1");
+      Sheet sheet = workbook.createSheet("sheet1"+chosen);
 
       for (int i = 0; i < headNumber; i++) {
         // creating rows
