@@ -220,7 +220,7 @@ public class VijayRekha {
           if (i == 0) {
             // adding in the first column
             Cell cellPatientNames = row.createCell(j + 1);
-            System.out.println(patientNames.size());
+//            System.out.println(patientNames.size());
             cellPatientNames.setCellValue(patientNames.get(j));
           } else {
             // adding in the final results and values in the cells
