@@ -198,17 +198,23 @@ public class VijayRekha {
     //creating a workbook
     Workbook workbook = new HSSFWorkbook();
     // handling error in case
-    try{
+    try {
       // creating a sheet in the Excel
       Sheet sheet = workbook.createSheet("sheet1");
 
-      for ( int i=0; i<limit+1; i++){
+      for (int i = 0; i < headNumber; i++) {
         // creating rows
         Row row = sheet.createRow(i);
-        for (int j=0; j< headNumber;j++){
-          Cell cell = row.createCell(j);
-          cell.setCellValue();
-
+        Cell cellhead = row.createCell(i);
+        cellhead.setCellValue(head.get(i));
+        for (int j = 0; j < limit + 1; j++) {
+          if (j == 0) {
+            Cell cellPatientNames = row.createCell(j);
+            cellPatientNames.setCellValue(patientNames.get(j));
+          } else {
+            Cell cellFinalResults = row.createCell(j);
+            cellFinalResults.setCellValue(finalResult.get(i));
+          }
         }
       }
 
