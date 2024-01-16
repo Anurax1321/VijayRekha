@@ -191,6 +191,9 @@ public class VijayRekha {
     }
   }
 
+  /**
+   *
+   */
   public void writeToExcel() {
     // Excel file path
     String excelFilePath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\finalResult.xlsx";
@@ -205,23 +208,36 @@ public class VijayRekha {
       for (int i = 0; i < headNumber; i++) {
         // creating rows
         Row row = sheet.createRow(i);
+        // creating a cell with a column number
         Cell cellhead = row.createCell(i);
+        // assigning the head column of the Excel
         cellhead.setCellValue(head.get(i));
         for (int j = 0; j < limit + 1; j++) {
-          if (j == 0) {
-            Cell cellPatientNames = row.createCell(j);
+          // The first column is patient names
+          if (i == 0) {
+            // adding in the first column
+            Cell cellPatientNames = row.createCell(j+1);
             cellPatientNames.setCellValue(patientNames.get(j));
           } else {
-            Cell cellFinalResults = row.createCell(j);
-            cellFinalResults.setCellValue(finalResult.get(i));
+            // adding in the final results and values in the cells
+            Cell cellFinalResults = row.createCell(j+1);
+            cellFinalResults.setCellValue(finalResult.get(j));
           }
         }
       }
 
       try (FileOutputStream fileOut = new FileOutputStream(excelFilePath)) {
+        workbook.write(fileOut);
+        System.out.println("Excel file has been printed successfully. have a great time!");
       }
     } catch (IOException e) {
       e.printStackTrace();
+    }finally {
+      try{
+        workbook.close();
+      }catch (IOException e){
+        e.printStackTrace();
+      }
     }
   }
 
