@@ -93,9 +93,12 @@ public class VijayRekha {
       // extracting the data
       useData(processData(scan, data));
 
-      System.out.println(head);
-      System.out.println(patientNames);
-      System.out.println(finalResult);
+//      System.out.println(head);
+//      System.out.println(patientNames);
+//      System.out.println(finalResult);
+
+      // writing to excel after extraction
+      writeToExcel();
 
       // extraction of the data completed
       // now we combine these ArrayLists into one 2D Array
