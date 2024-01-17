@@ -93,9 +93,9 @@ public class VijayRekha {
       // extracting the data
       useData(processData(scan, data));
 
-//      System.out.println(head);
-//      System.out.println(patientNames);
-//      System.out.println(finalResult);
+      //      System.out.println(head);
+      //      System.out.println(patientNames);
+      //      System.out.println(finalResult);
 
       // writing to excel after extraction
       writeToExcel();
@@ -206,7 +206,7 @@ public class VijayRekha {
     // handling error in case
     try {
       // creating a sheet in the Excel
-      Sheet sheet = workbook.createSheet("sheet1"+chosen);
+      Sheet sheet = workbook.createSheet("sheet1" + chosen);
 
       // creating rows for the head
       Row rowHead = sheet.createRow(0);
@@ -215,16 +215,18 @@ public class VijayRekha {
         Cell cellhead = rowHead.createCell(i);
         // assigning the head column of the Excel
         cellhead.setCellValue(head.get(i));
-        for (int j = 0; j < limit; j++) {
-
-          // creating rows for patient names
-          Row rowPatient = sheet.createRow(j+1);
+      }
+      for (int i = 1; i <= limit; i++) {
+        Row rowRest = sheet.createRow(i);
+        for (int j = 0; j < headNumber; j++) {
+//          // creating rows for patient names
+//          Row rowPatient = sheet.createRow(j + 1);
           // The first column is patient names
-          if (i == 0) {
+          if (j == 0) {
             // adding in the first column
-            Cell cellPatientNames = rowPatient.createCell(j+1);
-//            System.out.println(patientNames.size());
-            cellPatientNames.setCellValue(patientNames.get(j));
+            Cell cellPatientNames = rowRest.createCell(j + 1);
+            //            System.out.println(patientNames.size());
+            cellPatientNames.setCellValue(patientNames.get(i));
           } else {
             // adding in the final results and values in the cells
             Cell cellFinalResults = rowPatient.createCell(j + 1);
@@ -242,6 +244,11 @@ public class VijayRekha {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+
+  public void writeDataToSheet(String sheet,Workbook workbook){
+
   }
 
 
