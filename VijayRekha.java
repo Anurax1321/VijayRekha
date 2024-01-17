@@ -204,8 +204,9 @@ public class VijayRekha {
     try {
       //creating a workbook
       Workbook workbook = new HSSFWorkbook();
+      
+      // creating one sheet for one data set and writing to it
       if(chosen==1) {
-        // creating one sheet for one data set and writing to it
         writeDataToSheet("Sheet1", workbook); // AA
       } else if (chosen==2) {
         writeDataToSheet("Sheet2",workbook); // AC
@@ -227,7 +228,6 @@ public class VijayRekha {
     }catch (IllegalArgumentException e){
       System.out.println(e);
     }
-
   }
 
 
