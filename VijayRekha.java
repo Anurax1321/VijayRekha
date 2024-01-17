@@ -204,7 +204,7 @@ public class VijayRekha {
     try {
       //creating a workbook
       Workbook workbook = new HSSFWorkbook();
-      
+
       // creating one sheet for one data set and writing to it
       if(chosen==1) {
         writeDataToSheet("Sheet1", workbook); // AA
@@ -231,9 +231,9 @@ public class VijayRekha {
   }
 
 
-  public void writeDataToSheet(String sheet, Workbook workbook) {
+  public void writeDataToSheet(String sheet1, Workbook workbook) {
     // creating a sheet in the Excel
-    Sheet sheet = workbook.createSheet("sheet1" + chosen);
+    Sheet sheet = workbook.createSheet(sheet1);
 
     // creating rows for the head
     Row rowHead = sheet.createRow(0);
