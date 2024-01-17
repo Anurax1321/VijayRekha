@@ -200,40 +200,11 @@ public class VijayRekha {
   public void writeToExcel() {
     // Excel file path
     String excelFilePath = "C:\\Users\\jyoth\\IdeaProjects\\VijayRekha\\src\\finalResult.xls";
-
-    //creating a workbook
-    Workbook workbook = new HSSFWorkbook();
     // handling error in case
     try {
-      // creating a sheet in the Excel
-      Sheet sheet = workbook.createSheet("sheet1" + chosen);
+      //creating a workbook
+      Workbook workbook = new HSSFWorkbook();
 
-      // creating rows for the head
-      Row rowHead = sheet.createRow(0);
-      for (int i = 0; i < headNumber; i++) {
-        // creating a cell with a column number
-        Cell cellhead = rowHead.createCell(i);
-        // assigning the head column of the Excel
-        cellhead.setCellValue(head.get(i));
-      }
-      for (int i = 1; i <= limit; i++) {
-        Row rowRest = sheet.createRow(i);
-        for (int j = 0; j < headNumber; j++) {
-//          // creating rows for patient names
-//          Row rowPatient = sheet.createRow(j + 1);
-          // The first column is patient names
-          if (j == 0) {
-            // adding in the first column
-            Cell cellPatientNames = rowRest.createCell(j + 1);
-            //            System.out.println(patientNames.size());
-            cellPatientNames.setCellValue(patientNames.get(i));
-          } else {
-            // adding in the final results and values in the cells
-            Cell cellFinalResults = rowPatient.createCell(j + 1);
-            cellFinalResults.setCellValue(finalResult.get(j));
-          }
-        }
-      }
       FileOutputStream fileOut = new FileOutputStream(excelFilePath);
       try {
         workbook.write(fileOut);
@@ -244,11 +215,40 @@ public class VijayRekha {
     } catch (IOException e) {
       e.printStackTrace();
     }
+
   }
 
 
-  public void writeDataToSheet(String sheet,Workbook workbook){
+  public void writeDataToSheet(String sheet, Workbook workbook) {
+    // creating a sheet in the Excel
+    Sheet sheet = workbook.createSheet("sheet1" + chosen);
 
+    // creating rows for the head
+    Row rowHead = sheet.createRow(0);
+    for (int i = 0; i < headNumber; i++) {
+      // creating a cell with a column number
+      Cell cellhead = rowHead.createCell(i);
+      // assigning the head column of the Excel
+      cellhead.setCellValue(head.get(i));
+    }
+    for (int i = 1; i <= limit; i++) {
+      Row rowRest = sheet.createRow(i);
+      for (int j = 0; j < headNumber; j++) {
+        //          // creating rows for patient names
+        //          Row rowPatient = sheet.createRow(j + 1);
+        // The first column is patient names
+        if (j == 0) {
+          // adding in the first column
+          Cell cellPatientNames = rowRest.createCell(j + 1);
+          //            System.out.println(patientNames.size());
+          cellPatientNames.setCellValue(patientNames.get(i));
+        } else {
+          // adding in the final results and values in the cells
+          Cell cellFinalResults = rowPatient.createCell(j + 1);
+          cellFinalResults.setCellValue(finalResult.get(j));
+        }
+      }
+    }
   }
 
 
