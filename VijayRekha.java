@@ -204,6 +204,10 @@ public class VijayRekha {
     try {
       //creating a workbook
       Workbook workbook = new HSSFWorkbook();
+      // creating one sheet for one data set and writing to it
+      writeDataToSheet("Sheet1",workbook); // AA
+      writeDataToSheet("Sheet2",workbook); // AC
+      writeDataToSheet("Sheet3",workbook); // ACEXT
 
       FileOutputStream fileOut = new FileOutputStream(excelFilePath);
       try {
