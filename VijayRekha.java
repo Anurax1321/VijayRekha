@@ -206,13 +206,13 @@ public class VijayRekha {
       Workbook workbook = new HSSFWorkbook();
 
       // creating one sheet for one data set and writing to it
-      if(chosen==1) {
+      if (chosen == 1) {
         writeDataToSheet("Sheet1", workbook); // AA
-      } else if (chosen==2) {
-        writeDataToSheet("Sheet2",workbook); // AC
-      } else if (chosen==3){
-        writeDataToSheet("Sheet3",workbook); // ACEXT
-      }else {
+      } else if (chosen == 2) {
+        writeDataToSheet("Sheet2", workbook); // AC
+      } else if (chosen == 3) {
+        writeDataToSheet("Sheet3", workbook); // ACEXT
+      } else {
         throw new IllegalArgumentException("Wrong dataset values, choose again");
       }
 
@@ -225,7 +225,7 @@ public class VijayRekha {
       }
     } catch (IOException e) {
       e.printStackTrace();
-    }catch (IllegalArgumentException e){
+    } catch (IllegalArgumentException e) {
       System.out.println(e);
     }
   }
