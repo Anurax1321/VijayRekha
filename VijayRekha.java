@@ -243,21 +243,25 @@ public class VijayRekha {
       // assigning the head column of the Excel
       cellhead.setCellValue(head.get(i));
     }
-    for (int i = 1; i <= limit; i++) {
-      Row rowRest = sheet.createRow(i);
-      for (int j = 0; j < headNumber; j++) {
-        //          // creating rows for patient names
-        //          Row rowPatient = sheet.createRow(j + 1);
+
+
+    for (int i = 0, k = 0; i <= headNumber; i++) {
+      for (int j = 1; j <= limit; j++) {
         // The first column is patient names
-        if (j == 0) {
+        if (i == 0) {
+          // crating the rows
+          Row rowPatient = sheet.createRow(j);
           // adding in the first column
-          Cell cellPatientNames = rowRest.createCell(j + 1);
+          Cell cellPatientNames = rowPatient.createCell(j + 1);
           //            System.out.println(patientNames.size());
           cellPatientNames.setCellValue(patientNames.get(i));
         } else {
+          // getting the value of the rows
+          Row rowResult = sheet.getRow(j);
           // adding in the final results and values in the cells
-          Cell cellFinalResults = rowPatient.createCell(j + 1);
-          cellFinalResults.setCellValue(finalResult.get(j));
+          Cell cellFinalResults = rowResult.createCell(j + 1);
+          cellFinalResults.setCellValue(finalResult.get(k));
+          k++;
         }
       }
     }
