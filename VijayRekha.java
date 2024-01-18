@@ -232,37 +232,62 @@ public class VijayRekha {
 
 
   public void writeDataToSheet(String sheet1, Workbook workbook) {
-    // creating a sheet in the Excel
-    Sheet sheet = workbook.createSheet(sheet1);
+    //    // creating a sheet in the Excel
+    //    Sheet sheet = workbook.createSheet(sheet1);
+    //
+    //    // creating rows for the head
+    //    Row rowHead = sheet.createRow(0);
+    //    for (int i = 0; i < headNumber; i++) {
+    //      // creating a cell with a column number
+    //      Cell cellhead = rowHead.createCell(i);
+    //      // assigning the head column of the Excel
+    //      cellhead.setCellValue(head.get(i));
+    //    }
+    //
+    //
+    //    for (int i = 0, k = 0; i <= headNumber; i++) {
+    //      for (int j = 1; j <= limit; j++) {
+    //        // The first column is patient names
+    //        if (i == 0) {
+    //          // crating the rows
+    //          Row rowPatient = sheet.createRow(j);
+    //          // adding in the first column
+    //          Cell cellPatientNames = rowPatient.createCell(j + 1);
+    //          //            System.out.println(patientNames.size());
+    //          cellPatientNames.setCellValue(patientNames.get(i));
+    //        } else {
+    //          // getting the value of the rows
+    //          Row rowResult = sheet.getRow(j);
+    //          // adding in the final results and values in the cells
+    //          Cell cellFinalResults = rowResult.createCell(j + 1);
+    //          cellFinalResults.setCellValue(finalResult.get(k));
+    //          k++;
+    //        }
+    //      }
+    //    }
 
-    // creating rows for the head
-    Row rowHead = sheet.createRow(0);
-    for (int i = 0; i < headNumber; i++) {
-      // creating a cell with a column number
-      Cell cellhead = rowHead.createCell(i);
-      // assigning the head column of the Excel
-      cellhead.setCellValue(head.get(i));
+
+    Sheet sheet = workbook.createSheet(sheetName);
+
+    Row topRow = sheet.createRow(0);
+    for (int i = 0; i < topHeadings.length; i++) {
+      Cell cell = topRow.createCell(i + 1);
+      cell.setCellValue(topHeadings[i]);
     }
 
+    for (int i = 0; i < leftColumn.length; i++) {
+      Row row = sheet.createRow(i + 1);
+      Cell cell = row.createCell(0);
+      cell.setCellValue(leftColumn[i]);
+    }
 
-    for (int i = 0, k = 0; i <= headNumber; i++) {
-      for (int j = 1; j <= limit; j++) {
-        // The first column is patient names
-        if (i == 0) {
-          // crating the rows
-          Row rowPatient = sheet.createRow(j);
-          // adding in the first column
-          Cell cellPatientNames = rowPatient.createCell(j + 1);
-          //            System.out.println(patientNames.size());
-          cellPatientNames.setCellValue(patientNames.get(i));
-        } else {
-          // getting the value of the rows
-          Row rowResult = sheet.getRow(j);
-          // adding in the final results and values in the cells
-          Cell cellFinalResults = rowResult.createCell(j + 1);
-          cellFinalResults.setCellValue(finalResult.get(k));
-          k++;
-        }
+    int dataIndex = 0;
+    for (int i = 0; i < leftColumn.length; i++) {
+      Row row = sheet.getRow(i + 1);
+      for (int j = 0; j < topHeadings.length; j++) {
+        Cell cell = row.createCell(j + 1);
+        cell.setCellValue(remainingData[dataIndex]);
+        dataIndex++;
       }
     }
   }
