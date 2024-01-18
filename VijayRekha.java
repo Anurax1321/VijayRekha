@@ -272,13 +272,13 @@ public class VijayRekha {
     Row topRow = sheet.createRow(0);
     for (int i = 0; i < headNumber; i++) {
       Cell cell = topRow.createCell(i + 1);
-      cell.setCellValue(head[i]);
+      cell.setCellValue(head.get(i));
     }
 
     for (int i = 0; i < limit; i++) {
       Row row = sheet.createRow(i + 1);
       Cell cell = row.createCell(0);
-      cell.setCellValue(patientNames[i]);
+      cell.setCellValue(patientNames.get(i));
     }
 
     int dataIndex = 0;
@@ -286,7 +286,7 @@ public class VijayRekha {
       Row row = sheet.getRow(i + 1);
       for (int j = 0; j < headNumber; j++) {
         Cell cell = row.createCell(j + 1);
-        cell.setCellValue(finalResult[dataIndex]);
+        cell.setCellValue(finalResult.get(dataIndex));
         dataIndex++;
       }
     }
