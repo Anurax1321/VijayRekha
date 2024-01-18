@@ -231,9 +231,9 @@ public class VijayRekha {
   }
 
 
-  public void writeDataToSheet(String sheet1, Workbook workbook) {
+  public void writeDataToSheet(String sheetName, Workbook workbook) {
     //    // creating a sheet in the Excel
-    //    Sheet sheet = workbook.createSheet(sheet1);
+    //    Sheet sheet = workbook.createSheet(sheetName);
     //
     //    // creating rows for the head
     //    Row rowHead = sheet.createRow(0);
@@ -270,23 +270,23 @@ public class VijayRekha {
     Sheet sheet = workbook.createSheet(sheetName);
 
     Row topRow = sheet.createRow(0);
-    for (int i = 0; i < topHeadings.length; i++) {
+    for (int i = 0; i < headNumber; i++) {
       Cell cell = topRow.createCell(i + 1);
-      cell.setCellValue(topHeadings[i]);
+      cell.setCellValue(head[i]);
     }
 
-    for (int i = 0; i < leftColumn.length; i++) {
+    for (int i = 0; i < limit; i++) {
       Row row = sheet.createRow(i + 1);
       Cell cell = row.createCell(0);
-      cell.setCellValue(leftColumn[i]);
+      cell.setCellValue(patientNames[i]);
     }
 
     int dataIndex = 0;
-    for (int i = 0; i < leftColumn.length; i++) {
+    for (int i = 0; i < limit; i++) {
       Row row = sheet.getRow(i + 1);
-      for (int j = 0; j < topHeadings.length; j++) {
+      for (int j = 0; j < headNumber; j++) {
         Cell cell = row.createCell(j + 1);
-        cell.setCellValue(remainingData[dataIndex]);
+        cell.setCellValue(finalResult[dataIndex]);
         dataIndex++;
       }
     }
