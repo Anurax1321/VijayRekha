@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="innoventsolutions.birt.runtime.apache.poi_3.9.0.v201405241750" type="repository">
+    <properties maven-id="com.innoventsolutions.birt.runtime:org.apache.poi_3.9.0.v201405241750:4.8.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.apache.poi_3.9.0.v201405241750-4.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/org.apache.poi_3.9.0.v201405241750-4.8.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
